@@ -285,7 +285,7 @@
 
         <div class="max-w-4xl mx-auto">
             <!-- Header -->
-            <div class="text-center mb-12">
+            <div id="coGuestsHeader" class="text-center mb-12">
                 <span class="font-sans text-xs tracking-super text-grayAccent font-bold uppercase block mb-3">NHỮNG NGƯỜI BẠN</span>
                 <h2 id="coGuestTitle" class="font-serif text-3xl md:text-5xl font-bold tracking-wide text-white leading-snug">
                     Những người Bạn Hiền cũng có thể gặp tại buổi lễ
@@ -980,7 +980,7 @@
                 ease: "power3.out"
             });
 
-            gsap.from("#coGuestsSection .text-center", {
+            gsap.from("#coGuestsHeader", {
                 scrollTrigger: {
                     trigger: "#coGuestsSection",
                     start: "top 80%",
@@ -988,7 +988,6 @@
                 duration: 1,
                 y: 30,
                 opacity: 0,
-                stagger: 0.15,
                 ease: "power2.out"
             });
 
