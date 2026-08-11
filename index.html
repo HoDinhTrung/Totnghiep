@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lễ Tốt Nghiệp - Hồ Đình Trung | Lời Mời Trân Trọng</title>
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Lời mời trân trọng gửi tới bạn tham dự Lễ tốt nghiệp của Hồ Đình Trung tại Trường Đại học Kinh tế Quốc dân (NEU). Rất mong được đón tiếp bạn!">
+    <meta property="og:title" content="Lễ Tốt Nghiệp - Hồ Đình Trung | Lời Mời Trân Trọng">
+    <meta property="og:description" content="Lời mời trân trọng gửi tới bạn tham dự Lễ tốt nghiệp của Hồ Đình Trung tại Trường Đại học Kinh tế Quốc dân (NEU).">
+    <meta property="og:image" content="./trung_portrait.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#00529C', // Deep NEU Blue
+                            dark: '#02386E',
+                            light: '#1E75C4',
+                            luxury: '#030712',  // Ultra dark base
+                            card: '#0a1224'
+                        },
+                        gold: {
+                            DEFAULT: '#FDBB30', // Luxury NEU Gold Accent
+                            dark: '#DFA124',
+                            light: '#FED068',
+                            glow: 'rgba(253, 187, 48, 0.4)'
+                        },
+                        crimson: {
+                            DEFAULT: '#C8102E', // Accent Red
+                            dark: '#9B0C22'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '.2em',
+                        super: '.3em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS styles for Luxury feeling -->
+    <style type="text/css">
+        .luxury-gradient-text {
+            background: linear-gradient(135deg, #FFFFFF 30%, #FDBB30 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-glow {
+            box-shadow: 0 0 15px rgba(253, 187, 48, 0.15), inset 0 0 15px rgba(253, 187, 48, 0.05);
+            border: 1px solid rgba(253, 187, 48, 0.3);
+        }
+        .gold-border-glow-active {
+            box-shadow: 0 0 25px rgba(253, 187, 48, 0.4), inset 0 0 10px rgba(253, 187, 48, 0.2);
+            border: 1px solid rgba(253, 187, 48, 0.8);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030712;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00529C;
+            border-radius: 4px;
+            border: 2px solid #030712;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FDBB30;
+        }
+        /* Floating Dust Animation */
+        @keyframes float-dust {
+            0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.6; }
+            100% { transform: translateY(-100px) translateX(20px) rotate(360deg); opacity: 0; }
+        }
+        .dust-particle {
+            position: absolute;
+            background: #FDBB30;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float-dust 8s infinite linear;
+        }
+        .glass-invitation {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(253, 187, 48, 0.25);
+        }
+        .dark-glass-invitation {
+            background: rgba(10, 18, 36, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(253, 187, 48, 0.2);
+        }
+    </style>
+
+    <!-- FontAwesome for fallback icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-navy-luxury text-slate-100 font-sans overflow-x-hidden antialiased">
+
+    <!-- Ambient Sound Toggle (Optional elegant background element) -->
+    <div class="fixed top-6 right-6 z-50">
+        <button id="musicToggle" class="bg-navy-luxury/80 border border-gold/40 text-gold hover:text-white hover:border-gold p-3 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm group shadow-lg" aria-label="Âm nhạc">
+            <i class="fas fa-music text-sm group-hover:scale-110 transition-transform"></i>
+            <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 ease-in-out whitespace-nowrap text-xs tracking-wider">ÂM NHẠC</span>
+        </button>
+        <audio id="bgMusic" loop preload="auto">
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Floating Background Dust Container -->
+    <div id="dustContainer" class="fixed inset-0 pointer-events-none z-10 overflow-hidden opacity-40"></div>
+
+    <!-- ================= SECTION 1: HERO BANNER ================= -->
+    <section id="hero" class="relative min-h-screen flex flex-col justify-between items-center py-12 px-4 md:px-8 overflow-hidden z-20">
+        <!-- Background Overlay / Gradients -->
+        <div class="absolute inset-0 bg-gradient-to-b from-navy-luxury/40 via-navy-luxury/80 to-navy-luxury pointer-events-none z-0"></div>
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-navy/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-0 w-[40rem] h-[40rem] bg-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <!-- Upper Tagline -->
+        <div class="w-full text-center z-10 mt-6 md:mt-10">
+            <p class="font-sans text-xs md:text-sm uppercase tracking-super text-gold font-medium mb-3">LỜI MỜI TRÂN TRỌNG</p>
+            <div class="w-16 h-[1px] bg-gold mx-auto"></div>
+        </div>
+
+        <!-- Main Portrait & Name Integration -->
+        <div class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center justify-center my-auto z-10">
+            <!-- Left Text Content -->
+            <div class="lg:col-span-5 text-center lg:text-left order-2 lg:order-1 flex flex-col justify-center">
+                <span class="font-serif italic text-2xl text-gold mb-1 block">Trân trọng kính mời dự</span>
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold tracking-wide uppercase text-white mb-2 leading-tight">
+                    Lễ Tốt Nghiệp
+                </h1>
+                <div class="h-[2px] w-32 bg-gradient-to-r from-gold to-transparent my-4 mx-auto lg:mx-0"></div>
+                <p class="font-serif italic text-xl md:text-2xl text-slate-300 font-light max-w-md mx-auto lg:mx-0 leading-relaxed">
+                    Đánh dấu mốc hành trình trưởng thành đầy ý nghĩa của Hồ Đình Trung.
+                </p>
+                
+                <!-- Event Metadata -->
+                <div class="mt-8 space-y-3 font-sans text-sm md:text-base text-slate-400">
+                    <div class="flex items-center justify-center lg:justify-start gap-3">
+                        <span class="text-gold text-base w-6 text-center"><i class="far fa-calendar-alt"></i></span>
+                        <span class="tracking-wide">Chủ Nhật, ngày 23 tháng 08 năm 2026</span>
+                    </div>
+                    <div class="flex items-center justify-center lg:justify-start gap-3">
+                        <span class="text-gold text-base w-6 text-center"><i class="far fa-clock"></i></span>
+                        <span class="tracking-wide">09:00 AM (Đón khách từ 08:00 AM)</span>
+                    </div>
+                    <div class="flex items-center justify-center lg:justify-start gap-3">
+                        <span class="text-gold text-base w-6 text-center"><i class="fas fa-map-marker-alt"></i></span>
+                        <span class="tracking-wide">Trường Đại học Kinh tế Quốc dân (NEU)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Portrait Image -->
+            <div class="lg:col-span-7 flex justify-center items-center order-1 lg:order-2 relative px-4">
+                <!-- Golden Background Frame -->
+                <div class="absolute top-4 left-8 md:left-16 w-[75%] h-[95%] border border-gold/40 rounded-sm pointer-events-none transform -rotate-3 z-0 transition-transform duration-700 hover:rotate-0"></div>
+                
+                <!-- Image Wrapper with Tilt -->
+                <div class="relative w-[85%] md:w-[75%] overflow-hidden rounded shadow-2xl z-10 gold-border-glow bg-navy-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <img src="./trung_portrait.jpg" alt="Hồ Đình Trung" class="w-full object-cover aspect-[2/3] hover:scale-105 transition-transform duration-700 select-none">
+                    
+                    <!-- Overlay Overlay text blending with photo -->
+                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-navy-luxury via-navy-luxury/40 to-transparent p-6 text-center pt-20">
+                        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold tracking-widest uppercase text-white leading-none">
+                            HỒ ĐÌNH TRUNG
+                        </h2>
+                        <span class="font-sans text-xs tracking-super text-gold font-semibold uppercase mt-2 block">CỬ NHÂN XUẤT SẮC - NEU</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Countdown Timer & Scroll CTA -->
+        <div class="w-full max-w-4xl mx-auto flex flex-col items-center gap-8 z-10 mt-6">
+            <!-- Countdown Grid -->
+            <div id="countdown" class="grid grid-cols-4 gap-3 md:gap-6 text-center w-full max-w-xl px-2">
+                <div class="bg-navy-luxury/60 backdrop-blur-md rounded border border-gold/20 p-3 flex flex-col justify-center items-center min-w-[70px]">
+                    <span id="days" class="font-serif text-2xl md:text-4xl text-gold font-bold">00</span>
+                    <span class="font-sans text-[10px] md:text-xs text-slate-400 tracking-wider uppercase mt-1">Ngày</span>
+                </div>
+                <div class="bg-navy-luxury/60 backdrop-blur-md rounded border border-gold/20 p-3 flex flex-col justify-center items-center min-w-[70px]">
+                    <span id="hours" class="font-serif text-2xl md:text-4xl text-gold font-bold">00</span>
+                    <span class="font-sans text-[10px] md:text-xs text-slate-400 tracking-wider uppercase mt-1">Giờ</span>
+                </div>
+                <div class="bg-navy-luxury/60 backdrop-blur-md rounded border border-gold/20 p-3 flex flex-col justify-center items-center min-w-[70px]">
+                    <span id="minutes" class="font-serif text-2xl md:text-4xl text-gold font-bold">00</span>
+                    <span class="font-sans text-[10px] md:text-xs text-slate-400 tracking-wider uppercase mt-1">Phút</span>
+                </div>
+                <div class="bg-navy-luxury/60 backdrop-blur-md rounded border border-gold/20 p-3 flex flex-col justify-center items-center min-w-[70px]">
+                    <span id="seconds" class="font-serif text-2xl md:text-4xl text-gold font-bold">00</span>
+                    <span class="font-sans text-[10px] md:text-xs text-slate-400 tracking-wider uppercase mt-1">Giây</span>
+                </div>
+            </div>
+
+            <!-- Scroll CTA Button -->
+            <a href="#invitation" class="group flex flex-col items-center gap-2 hover:text-gold transition-all duration-300">
+                <span class="font-sans text-xs tracking-super text-slate-400 group-hover:text-gold uppercase transition-colors">Xem Lời Mời</span>
+                <div class="w-8 h-8 rounded-full border border-slate-500 group-hover:border-gold flex items-center justify-center transition-colors">
+                    <i class="fas fa-chevron-down text-slate-400 group-hover:text-gold group-hover:translate-y-0.5 transition-all"></i>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ================= SECTION 2: PERSONAL INVITATION ================= -->
+    <section id="invitation" class="relative py-28 px-4 md:px-8 bg-white text-navy-luxury z-20 overflow-hidden">
+        <!-- Muted Geometric Background Accents -->
+        <div class="absolute inset-0 bg-[radial-gradient(#00529c_0.8px,transparent_0.8px)] [background-size:24px_24px] opacity-[0.03]"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-navy/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto flex flex-col items-center">
+            <!-- Luxury Frame Card with Vanilla-Tilt -->
+            <div id="inviteCard" class="w-full glass-invitation rounded-lg p-8 md:p-16 shadow-2xl relative border-double border-4 border-gold/30" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-perspective="1200">
+                
+                <!-- Corner Ornaments -->
+                <div class="absolute top-3 left-3 w-8 h-8 border-t border-l border-gold/60"></div>
+                <div class="absolute top-3 right-3 w-8 h-8 border-t border-r border-gold/60"></div>
+                <div class="absolute bottom-3 left-3 w-8 h-8 border-b border-l border-gold/60"></div>
+                <div class="absolute bottom-3 right-3 w-8 h-8 border-b border-r border-gold/60"></div>
+
+                <!-- Loading Spinner for API Fetching -->
+                <div id="inviteCardLoader" class="absolute inset-0 bg-white/95 rounded-lg flex flex-col justify-center items-center z-30 transition-opacity duration-500">
+                    <div class="w-12 h-12 border-4 border-navy border-t-gold rounded-full animate-spin mb-4"></div>
+                    <span class="font-serif italic text-lg text-navy-dark tracking-wide">Đang chuẩn bị thư mời...</span>
+                </div>
+
+                <!-- Card Header -->
+                <div class="text-center mb-10">
+                    <p class="font-sans text-xs tracking-super text-gold font-bold uppercase mb-2">LETTER OF INVITATION</p>
+                    <h3 id="inviteGreeting" class="font-serif text-3xl md:text-5xl lg:text-6xl font-bold tracking-normal text-navy-dark my-4">
+                        Thân gửi Bạn Hiền
+                    </h3>
+                    <div class="w-24 h-[1px] bg-gold mx-auto my-6"></div>
+                </div>
+
+                <!-- Card Body -->
+                <div class="text-center max-w-2xl mx-auto space-y-6 md:space-y-8">
+                    <!-- Typing / Reveal message container -->
+                    <p id="inviteMessage" class="font-sans text-base md:text-lg leading-relaxed text-slate-700 text-justify md:text-center">
+                        Sau một hành trình dài học tập và rèn luyện, Trung cuối cùng cũng đã đi đến một cột mốc rất đặc biệt. Rất mong bạn có thể dành chút thời gian đến chung vui cùng Trung tại ngày Lễ Tốt nghiệp!
+                    </p>
+
+                    <!-- Quote Block -->
+                    <div class="py-6 border-y border-gold/20 my-8">
+                        <p class="font-serif italic text-lg md:text-2xl text-navy font-light leading-relaxed">
+                            "Một cột mốc sẽ ý nghĩa hơn khi có những người mình quý cùng chứng kiến."
+                        </p>
+                    </div>
+
+                    <!-- Inner Sign-off -->
+                    <div class="flex flex-col items-center justify-center mt-8 space-y-1">
+                        <span class="font-sans text-xs tracking-widest text-slate-500 uppercase">Trân trọng,</span>
+                        <span class="font-serif text-2xl md:text-3xl text-navy-dark font-semibold tracking-widest uppercase mt-2">HỒ ĐÌNH TRUNG</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION 3: CO-GUEST LIST ================= -->
+    <section id="coGuestsSection" class="relative py-28 px-4 md:px-8 bg-navy-luxury border-t border-gold/10 z-20">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-navy/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <span class="font-sans text-xs tracking-super text-gold font-bold uppercase block mb-3">NHỮNG NGƯỜI BẠN</span>
+                <h2 id="coGuestTitle" class="font-serif text-3xl md:text-5xl font-bold tracking-wide text-white leading-snug">
+                    Những người Bạn Hiền cũng có thể gặp tại buổi lễ
+                </h2>
+                <div class="w-16 h-[1px] bg-gold mx-auto my-5"></div>
+                <p class="font-serif italic text-base md:text-lg text-slate-400 max-w-xl mx-auto">
+                    Trung cũng đã mời một số người quen của bạn đến chung vui để ngày hội ngộ thêm trọn vẹn.
+                </p>
+            </div>
+
+            <!-- List Grid -->
+            <div id="coGuestsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 justify-center">
+                <!-- Template item for co-guests. JavaScript will populate this dynamically. -->
+                <div class="bg-navy-luxury/60 backdrop-blur-md rounded border border-gold/15 p-5 text-center flex flex-col justify-center items-center hover:border-gold/60 transition-all duration-300 group shadow-lg">
+                    <span class="text-gold text-lg mb-2"><i class="far fa-user"></i></span>
+                    <span class="font-sans text-sm font-medium tracking-wide text-slate-300 group-hover:text-white transition-colors">Những người bạn thân thiết</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION 4: TIMELINE + LOCATION + MAP ================= -->
+    <section id="details" class="relative py-28 px-4 md:px-8 bg-white text-navy-luxury z-20">
+        <div class="absolute inset-0 bg-[radial-gradient(#00529c_0.8px,transparent_0.8px)] [background-size:24px_24px] opacity-[0.03]"></div>
+        
+        <div class="max-w-6xl mx-auto">
+            <!-- Main Grid Layout: Left is Timeline, Right is Location/Map -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                
+                <!-- Left Column: Timeline -->
+                <div class="lg:col-span-6 space-y-12">
+                    <div class="text-left mb-10">
+                        <span class="font-sans text-xs tracking-super text-gold font-bold uppercase block mb-3">LỊCH TRÌNH SỰ KIỆN</span>
+                        <h2 class="font-serif text-3xl md:text-4xl font-bold tracking-wide text-navy-dark">Dòng Thời Gian Buổi Lễ</h2>
+                        <div class="w-16 h-[2px] bg-navy mt-4"></div>
+                    </div>
+
+                    <!-- Vertical Timeline Graphic -->
+                    <div class="relative pl-6 md:pl-8 border-l border-gold/30 space-y-10 py-2">
+                        
+                        <!-- Event 1 -->
+                        <div class="relative timeline-item transition-all duration-300">
+                            <!-- Bullet node -->
+                            <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 md:w-5 md:h-5 rounded-full bg-white border-2 border-gold flex items-center justify-center">
+                                <div class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-navy"></div>
+                            </div>
+                            <!-- Time Badge -->
+                            <span class="inline-block font-sans text-xs font-semibold tracking-wider text-gold bg-navy-luxury text-white px-3 py-1 rounded mb-3">08:00 AM</span>
+                            <!-- Event detail card -->
+                            <div class="bg-slate-50 border border-slate-200/60 rounded p-5 shadow-sm hover:shadow-md transition-shadow">
+                                <h4 class="font-serif text-xl font-bold text-navy-dark">Đón khách & Đón tiếp</h4>
+                                <p class="font-sans text-sm text-slate-600 mt-2 leading-relaxed">
+                                    Chào mừng quý khách đến với khuôn viên trường NEU. Tranh thủ gặp gỡ, trò chuyện trước khi buổi lễ chính thức bắt đầu.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Event 2 -->
+                        <div class="relative timeline-item transition-all duration-300">
+                            <!-- Bullet node -->
+                            <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 md:w-5 md:h-5 rounded-full bg-white border-2 border-gold flex items-center justify-center">
+                                <div class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-navy"></div>
+                            </div>
+                            <!-- Time Badge -->
+                            <span class="inline-block font-sans text-xs font-semibold tracking-wider text-gold bg-navy-luxury text-white px-3 py-1 rounded mb-3">08:30 AM</span>
+                            <!-- Event detail card -->
+                            <div class="bg-slate-50 border border-slate-200/60 rounded p-5 shadow-sm hover:shadow-md transition-shadow">
+                                <h4 class="font-serif text-xl font-bold text-navy-dark">Tham dự Lễ Tốt Nghiệp Chính Thức</h4>
+                                <p class="font-sans text-sm text-slate-600 mt-2 leading-relaxed">
+                                    Tham gia khoảnh khắc trao bằng cử nhân và các nghi thức tốt nghiệp trang trọng tại hội trường chính.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Event 3: Highlighted Item -->
+                        <div class="relative timeline-item transition-all duration-300">
+                            <!-- Bullet node (Glowing) -->
+                            <div class="absolute -left-[33px] md:-left-[41px] top-1 w-5 h-5 md:w-6 md:h-6 rounded-full bg-gold border-4 border-white flex items-center justify-center animate-pulse">
+                                <div class="w-2 h-2 rounded-full bg-navy"></div>
+                            </div>
+                            <!-- Time Badge (Glowing Gold) -->
+                            <span class="inline-block font-sans text-xs font-bold tracking-wider text-navy-dark bg-gold px-4 py-1.5 rounded shadow mb-3">09:30 AM</span>
+                            <!-- Event detail card (Glowing gold-border-glow-active) -->
+                            <div class="bg-navy-luxury text-white rounded-lg p-6 shadow-2xl gold-border-glow-active transform hover:-translate-y-1 transition-all duration-300">
+                                <div class="flex justify-between items-start flex-wrap gap-2">
+                                    <h4 class="font-serif text-xl md:text-2xl font-bold text-gold">Chụp ảnh kỷ niệm & Nhận quà lưu niệm</h4>
+                                    <span class="text-gold text-sm animate-bounce"><i class="fas fa-gift"></i> Đặc biệt</span>
+                                </div>
+                                <p class="font-sans text-sm text-slate-300 mt-3 leading-relaxed">
+                                    Khoảnh khắc lưu giữ kỷ niệm cùng gia đình, bạn bè và nhận món quà lưu niệm nhỏ thiết kế riêng từ Trung.
+                                </p>
+                                <div class="mt-4 pt-3 border-t border-gold/30 flex items-center gap-2">
+                                    <span class="text-gold text-xs"><i class="fas fa-heart"></i></span>
+                                    <p class="font-serif italic text-xs md:text-sm text-slate-200">
+                                        "Trung rất mong bạn có thể nán lại cùng chụp ảnh và chia sẻ khoảnh khắc đáng nhớ này."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Column: Location & Google Maps -->
+                <div class="lg:col-span-6 space-y-12">
+                    <div class="text-left mb-10">
+                        <span class="font-sans text-xs tracking-super text-gold font-bold uppercase block mb-3">ĐỊA ĐIỂM TỔ CHỨC</span>
+                        <h2 class="font-serif text-3xl md:text-4xl font-bold tracking-wide text-navy-dark">Trường Đại học Kinh tế Quốc dân (NEU)</h2>
+                        <div class="w-16 h-[2px] bg-navy mt-4"></div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="bg-slate-50 border border-slate-200/60 rounded-lg p-6 shadow-sm">
+                            <h4 class="font-serif text-xl font-bold text-navy-dark mb-2">Tòa nhà Thế kỷ (Nhà A2)</h4>
+                            <p class="font-sans text-sm text-slate-600 leading-relaxed mb-4">
+                                Công trình kiến trúc nổi bật và hiện đại nhất khuôn viên NEU. Lễ tốt nghiệp sẽ diễn ra trong không gian hội trường sang trọng của tòa nhà.
+                            </p>
+                            <div class="flex flex-col gap-2 font-sans text-xs text-slate-500">
+                                <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-gold w-4"></i> Cổng Giải Phóng: Số 207 đường Giải Phóng, Hai Bà Trưng, Hà Nội</span>
+                                <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-gold w-4"></i> Cổng Trần Đại Nghĩa: 213 - 215 Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội</span>
+                            </div>
+                        </div>
+
+                        <!-- Embedded Styled Map preview -->
+                        <div class="relative rounded-lg overflow-hidden border border-slate-200 shadow-lg group">
+                            <!-- Background Image of Campus representing map -->
+                            <img src="./neu_campus.jpg" alt="NEU Century Building Location Map" class="w-full object-cover h-64 filter brightness-[0.85] group-hover:scale-105 transition-transform duration-700 select-none">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-luxury/90 via-navy-luxury/40 to-transparent flex flex-col justify-end p-6">
+                                <h5 class="font-serif text-lg font-bold text-white mb-2">Bản đồ Đường Đi & Sơ đồ cổng trường</h5>
+                                <p class="font-sans text-xs text-slate-300 mb-4 leading-relaxed max-w-sm">
+                                    Để thuận tiện nhất, bạn có thể lựa chọn cổng vào gần nhất theo hai lộ trình dưới đây để mở chỉ đường trên Google Maps.
+                                </p>
+                                
+                                <!-- CTA Map Buttons -->
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=207+Giải+Phóng,+Đồng+Tâm,+Hai+Bà+Trưng,+Hà+Nội" target="_blank" class="bg-navy hover:bg-navy-dark text-white font-sans text-xs font-semibold py-3 px-4 rounded text-center transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
+                                        <i class="fas fa-route text-[10px]"></i>
+                                        <span>Đường đi Cổng Giải Phóng</span>
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=215+Trần+Đại+Nghĩa,+Đồng+Tâm,+Hai+Bà+Trưng,+Hà+Nội" target="_blank" class="bg-gold hover:bg-gold-dark text-navy-luxury font-sans text-xs font-bold py-3 px-4 rounded text-center transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
+                                        <i class="fas fa-route text-[10px]"></i>
+                                        <span>Đường đi Cổng Trần Đại Nghĩa</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION 5: EXTRA ACTIVITIES ================= -->
+    <section id="activities" class="relative py-28 px-4 md:px-8 bg-navy-luxury border-t border-gold/10 z-20 overflow-hidden">
+        <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-navy/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <span class="font-sans text-xs tracking-super text-gold font-bold uppercase block mb-3">TRẢI NGHIỆM ĐỒNG HÀNH</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold tracking-wide text-white leading-snug">Nếu Bạn Muốn Ở Lại Lâu Hơn...</h2>
+                <div class="w-16 h-[1px] bg-gold mx-auto my-5"></div>
+                <p class="font-serif italic text-base md:text-lg text-slate-400 max-w-xl mx-auto">
+                    Ngoài buổi lễ chính, chúng ta có thể cùng nhau tham gia một vài hoạt động thú vị xung quanh khuôn viên trường.
+                </p>
+            </div>
+
+            <!-- 4-Card Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1 -->
+                <div class="relative rounded-lg overflow-hidden h-72 group shadow-xl border border-gold/10 hover:border-gold/50 transition-all duration-500">
+                    <div class="absolute inset-0 bg-cover bg-center filter brightness-[0.35] group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none" style="background-image: url('./neu_campus.jpg');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-luxury via-navy-luxury/40 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <span class="text-gold text-2xl mb-3 block"><i class="far fa-comments"></i></span>
+                        <h4 class="font-serif text-xl font-bold text-white mb-2">Ngồi trò chuyện</h4>
+                        <p class="font-sans text-xs text-slate-300 leading-relaxed">
+                            Cùng nhau ngồi lại, trò chuyện chia sẻ những dự định sắp tới và cập nhật tình hình cuộc sống sau chuỗi ngày bận rộn.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="relative rounded-lg overflow-hidden h-72 group shadow-xl border border-gold/10 hover:border-gold/50 transition-all duration-500">
+                    <div class="absolute inset-0 bg-cover bg-center filter brightness-[0.35] group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none" style="background-image: url('./neu_campus.jpg'); background-position: right top;"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-luxury via-navy-luxury/40 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <span class="text-gold text-2xl mb-3 block"><i class="fas fa-university"></i></span>
+                        <h4 class="font-serif text-xl font-bold text-white mb-2">Tham quan khuôn viên</h4>
+                        <p class="font-sans text-xs text-slate-300 leading-relaxed">
+                            Khám phá Tòa nhà Thế kỷ nguy nga và dạo bước quanh không gian hiện đại, năng động đậm chất NEU.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="relative rounded-lg overflow-hidden h-72 group shadow-xl border border-gold/10 hover:border-gold/50 transition-all duration-500">
+                    <div class="absolute inset-0 bg-cover bg-center filter brightness-[0.35] group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none" style="background-image: url('./neu_campus.jpg'); background-position: left bottom;"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-luxury via-navy-luxury/40 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <span class="text-gold text-2xl mb-3 block"><i class="fas fa-mug-hot"></i></span>
+                        <h4 class="font-serif text-xl font-bold text-white mb-2">Thưởng thức cà phê</h4>
+                        <p class="font-sans text-xs text-slate-300 leading-relaxed">
+                            Nhâm nhi ly cà phê đậm vị ngay trong khuôn viên trường, cảm nhận nhịp sống thanh xuân trẻ trung của các sinh viên.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="relative rounded-lg overflow-hidden h-72 group shadow-xl border border-gold/10 hover:border-gold/50 transition-all duration-500">
+                    <div class="absolute inset-0 bg-cover bg-center filter brightness-[0.35] group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none" style="background-image: url('./trung_portrait.jpg');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-luxury via-navy-luxury/40 to-transparent"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <span class="text-gold text-2xl mb-3 block"><i class="fas fa-camera-retro"></i></span>
+                        <h4 class="font-serif text-xl font-bold text-white mb-2">Chụp ảnh lưu niệm</h4>
+                        <p class="font-sans text-xs text-slate-300 leading-relaxed">
+                            Lưu lại những bức ảnh kỷ niệm thật đẹp tại các góc sống ảo triệu view trong giảng đường thế kỷ. 😌
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION 6: RSVP & BACKEND WRITER ================= -->
+    <section id="rsvp" class="relative py-32 px-4 md:px-8 bg-white text-navy-luxury z-20 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(#00529c_0.8px,transparent_0.8px)] [background-size:24px_24px] opacity-[0.03]"></div>
+        
+        <div class="max-w-3xl mx-auto text-center relative z-10">
+            <!-- Header -->
+            <div class="mb-12">
+                <span class="font-sans text-xs tracking-super text-gold font-bold uppercase block mb-3">XÁC NHẬN THAM DỰ (RSVP)</span>
+                <h2 id="rsvpTitle" class="font-serif text-3xl md:text-5xl font-bold tracking-wide text-navy-dark leading-tight">
+                    Hẹn gặp Bạn Hiền tại lễ tốt nghiệp nhé!
+                </h2>
+                <div class="w-16 h-[2px] bg-navy mx-auto my-5"></div>
+                <p class="font-serif italic text-base md:text-xl text-slate-600 max-w-lg mx-auto">
+                    Trung rất mong được đón tiếp và chung vui cùng bạn trong ngày trọng đại này. 🎓
+                </p>
+            </div>
+
+            <!-- RSVP Interaction Box -->
+            <div id="rsvpContainer" class="bg-slate-50 border border-slate-200/80 rounded-xl p-8 md:p-12 shadow-xl max-w-xl mx-auto transition-all duration-500">
+                <!-- Status Message or Action Area -->
+                <div id="rsvpActionArea" class="space-y-6">
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <!-- Yes, I will attend button -->
+                        <button id="btnRsvpYes" class="w-full sm:w-auto bg-navy hover:bg-navy-dark text-white font-sans text-sm font-bold tracking-wider py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-navy/30 flex items-center justify-center gap-2 group min-w-[200px]">
+                            <i class="fas fa-check text-xs group-hover:scale-120 transition-transform"></i>
+                            <span>CÓ, TÔI SẼ ĐẾN!</span>
+                        </button>
+                        <!-- No, I cannot attend button -->
+                        <button id="btnRsvpNo" class="w-full sm:w-auto border-2 border-slate-300 hover:border-crimson hover:text-crimson font-sans text-sm font-semibold tracking-wider py-3.5 px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2 min-w-[200px]">
+                            <i class="fas fa-times text-xs"></i>
+                            <span>TIẾC QUÁ, KHÔNG THỂ ĐẾN</span>
+                        </button>
+                    </div>
+                    
+                    <p class="font-sans text-xs text-slate-400 mt-4 italic">
+                        *Lưu ý: Bằng cách xác nhận, trạng thái phản hồi của bạn sẽ được gửi trực tiếp đến Trung để tiện chuẩn bị quà tặng và đón tiếp chu đáo.
+                    </p>
+                </div>
+
+                <!-- Loading State (hidden initially) -->
+                <div id="rsvpLoadingArea" class="hidden flex flex-col justify-center items-center py-6 space-y-4">
+                    <div class="w-10 h-10 border-4 border-navy border-t-gold rounded-full animate-spin"></div>
+                    <span class="font-serif italic text-base text-navy-dark">Đang gửi phản hồi của bạn...</span>
+                </div>
+
+                <!-- Response Success State (hidden initially) -->
+                <div id="rsvpSuccessArea" class="hidden flex flex-col justify-center items-center py-6 text-center space-y-4">
+                    <div id="successIcon" class="w-16 h-16 rounded-full bg-emerald-50 border-2 border-emerald-500 flex items-center justify-center text-emerald-500 text-2xl">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h4 id="successTitle" class="font-serif text-2xl font-bold text-navy-dark">Tuyệt vời! Hẹn gặp bạn nhé. 🎓</h4>
+                    <p id="successMessage" class="font-sans text-sm text-slate-600 max-w-sm">
+                        Cảm ơn bạn đã xác nhận tham dự. Sự hiện diện của bạn là niềm vinh hạnh lớn đối với Trung!
+                    </p>
+                    
+                    <button id="btnRsvpChange" class="mt-6 font-sans text-xs text-navy hover:text-gold hover:underline font-semibold uppercase tracking-wider flex items-center gap-2">
+                        <i class="fas fa-edit"></i> Thay đổi lựa chọn
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-luxury border-t border-gold/10 py-12 px-4 text-center text-slate-400 text-xs md:text-sm z-20 relative">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <h4 class="font-serif text-lg text-white font-medium tracking-widest uppercase">LỄ TỐT NGHIỆP HỒ ĐÌNH TRUNG</h4>
+            <p class="font-sans font-light tracking-wide">Trường Đại học Kinh tế Quốc dân (NEU) | 23.08.2026</p>
+            <div class="w-16 h-[1px] bg-gold/30 mx-auto"></div>
+            <p class="font-sans text-[10px] text-slate-500 uppercase tracking-widest">
+                Thiết kế bởi Đội ngũ Kiến trúc UI/UX Cao cấp | &copy; 2026 Hồ Đình Trung. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT & SCRIPTS ================= -->
+    <!-- GSAP for Editorial reveal animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Vanilla Tilt for 3D Cards -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <!-- Canvas Confetti for RSVP burst -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        // ================= CONFIGURATION =================
+        // Đường dẫn API Web App của Google Apps Script. 
+        // Khi cấu hình thành công, dán URL vào đây.
+        const GAS_API_URL = ""; 
+
+        // Thời gian diễn ra sự kiện đếm ngược (09:00 AM ngày 23/08/2026)
+        const EVENT_DATE = new Date("Aug 23, 2026 09:00:00").getTime();
+
+        // Dữ liệu Mock kiểm thử khi chạy offline hoặc lúc chưa thiết lập API
+        const MOCK_DATABASE = {
+            "nam-nguyen": {
+                "id": "nam-nguyen",
+                "guestName": "Nguyễn Văn Nam",
+                "customMessage": "Sau một hành trình dài học tập và tích lũy tại giảng đường NEU, Trung cuối cùng cũng đã đi đến một cột mốc tốt nghiệp đặc biệt. Những năm tháng qua thật đáng quý khi có sự đồng hành và hỗ trợ của Nam. Rất mong Nam có thể dành chút thời gian đến chung vui cùng Trung trong ngày nhận bằng!",
+                "coGuests": ["Trần Văn Bình", "Phạm Văn Cường", "Lê Văn Dương"],
+                "rsvpStatus": "pending"
+            },
+            "an-tran": {
+                "id": "an-tran",
+                "guestName": "Trần Thanh An",
+                "customMessage": "Ngày tốt nghiệp của Trung chắc chắn sẽ vui hơn rất nhiều nếu có sự góp mặt của An. Cùng nhau ghi dấu khoảnh khắc kết thúc thời sinh viên tươi đẹp này nhé. Rất mong An sẽ đến chung vui và chụp thật nhiều bức hình đẹp!",
+                "coGuests": ["Nguyễn Thị Bích", "Lê Hoàng Long"],
+                "rsvpStatus": "pending"
+            }
+        };
+
+        const DEFAULT_GUEST = {
+            "id": "default",
+            "guestName": "Bạn Hiền",
+            "customMessage": "Sau một hành trình dài học tập và tích lũy tại giảng đường NEU, Trung cuối cùng cũng đã đi đến một cột mốc tốt nghiệp đặc biệt. Rất mong bạn có thể dành chút thời gian đến chung vui và ghi lại những kỷ niệm đẹp cùng Trung trong ngày nhận bằng!",
+            "coGuests": ["Những người bạn thân thiết của Trung"],
+            "rsvpStatus": "pending"
+        };
+
+
+        // ================= GLOBAL STATE =================
+        let currentGuestId = "default";
+        let guestData = { ...DEFAULT_GUEST };
+
+
+        // ================= CUSTOM MUSIC HANDLER =================
+        const musicToggle = document.getElementById("musicToggle");
+        const bgMusic = document.getElementById("bgMusic");
+        let isMusicPlaying = false;
+
+        musicToggle.addEventListener("click", () => {
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                musicToggle.querySelector("i").className = "fas fa-music text-sm";
+                musicToggle.classList.remove("border-gold");
+                musicToggle.classList.add("border-gold/40");
+            } else {
+                bgMusic.play().catch(e => console.log("Music play blocked by browser auto-play policy."));
+                musicToggle.querySelector("i").className = "fas fa-pause text-sm";
+                musicToggle.classList.remove("border-gold/40");
+                musicToggle.classList.add("border-gold");
+            }
+            isMusicPlaying = !isMusicPlaying;
+        });
+
+
+        // ================= FLOATING DUST GENERATOR =================
+        function createDustParticles() {
+            const container = document.getElementById("dustContainer");
+            const particleCount = 40;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement("div");
+                particle.className = "dust-particle";
+                
+                // Randomize positions & dimensions
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                
+                // Randomize animation details
+                particle.style.animationDuration = `${Math.random() * 8 + 6}s`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                container.appendChild(particle);
+            }
+        }
+
+
+        // ================= COUNTDOWN TIMER =================
+        function initCountdown() {
+            const countdownTimer = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = EVENT_DATE - now;
+
+                if (distance < 0) {
+                    clearInterval(countdownTimer);
+                    document.getElementById("countdown").innerHTML = `
+                        <div class="col-span-4 bg-navy-luxury/80 border border-gold/30 rounded p-4 text-gold font-serif italic text-lg md:text-xl tracking-wider text-center">
+                            Buổi lễ đã chính thức diễn ra!
+                        </div>
+                    `;
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerText = String(days).padStart(2, '0');
+                document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+                document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+                document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+            }, 1000);
+        }
+
+
+        // ================= DYNAMIC DATA FETCHING & RENDER =================
+        async function loadGuestData() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const slug = urlParams.get('id');
+            
+            if (!slug) {
+                // No slug specified, use default guest settings immediately
+                renderGuestInterface(DEFAULT_GUEST);
+                return;
+            }
+
+            currentGuestId = slug;
+
+            // Check if local storage already has RSVP response for this guest
+            const localRsvp = localStorage.getItem(`rsvp_${slug}`);
+
+            // Fetch from Google Apps Script if URL provided
+            if (GAS_API_URL && GAS_API_URL.trim() !== "") {
+                try {
+                    const response = await fetch(`${GAS_API_URL}?id=${slug}`);
+                    if (!response.ok) throw new Error("API Network Response error");
+                    const data = await response.json();
+                    
+                    if (data && data.guestName) {
+                        guestData = {
+                            id: data.id || slug,
+                            guestName: data.guestName,
+                            customMessage: data.customMessage || DEFAULT_GUEST.customMessage,
+                            coGuests: data.coGuests || DEFAULT_GUEST.coGuests,
+                            rsvpStatus: localRsvp || data.rsvpStatus || "pending"
+                        };
+                        renderGuestInterface(guestData);
+                        return;
+                    }
+                } catch (error) {
+                    console.warn("GAS API failed or timed out. Falling back to Mock Database/Defaults. Error:", error);
+                }
+            }
+
+            // Fallback to local Mock Database
+            if (MOCK_DATABASE[slug]) {
+                guestData = { ...MOCK_DATABASE[slug] };
+            } else {
+                guestData = { ...DEFAULT_GUEST, id: slug };
+            }
+
+            // Apply local RSVP state if exists
+            if (localRsvp) {
+                guestData.rsvpStatus = localRsvp;
+            }
+
+            // Simulate slight network delay for ultra premium UX transition effect
+            setTimeout(() => {
+                renderGuestInterface(guestData);
+            }, 800);
+        }
+
+        function renderGuestInterface(data) {
+            // Remove Loader
+            const loader = document.getElementById("inviteCardLoader");
+            if (loader) {
+                loader.style.opacity = "0";
+                setTimeout(() => loader.remove(), 500);
+            }
+
+            // Update DOM text elements
+            document.getElementById("inviteGreeting").innerHTML = `Thân gửi <span class="text-navy italic font-serif font-bold font-semibold">${data.guestName}</span>`;
+            document.getElementById("inviteMessage").innerText = data.customMessage;
+            
+            // Section Titles
+            document.getElementById("coGuestTitle").innerHTML = `Những người <span class="italic text-gold">${data.guestName}</span> cũng có thể gặp tại buổi lễ`;
+            document.getElementById("rsvpTitle").innerHTML = `Hẹn gặp <span class="italic text-gold">${data.guestName}</span> tại lễ tốt nghiệp nhé!`;
+
+            // Update browser document title
+            document.title = `Lễ Tốt Nghiệp Hồ Đình Trung - Lời Mời Trân Trọng gửi ${data.guestName}`;
+
+            // Render Co-guests List
+            const coGuestsGrid = document.getElementById("coGuestsGrid");
+            coGuestsGrid.innerHTML = ""; // Clear template
+
+            if (data.coGuests && data.coGuests.length > 0) {
+                data.coGuests.forEach(name => {
+                    const card = document.createElement("div");
+                    card.className = "bg-navy-luxury/60 backdrop-blur-md rounded border border-gold/15 p-5 text-center flex flex-col justify-center items-center hover:border-gold/60 hover:-translate-y-1 transition-all duration-300 group shadow-lg";
+                    card.innerHTML = `
+                        <span class="text-gold text-base mb-2 group-hover:scale-110 transition-transform"><i class="far fa-user"></i></span>
+                        <span class="font-sans text-sm font-semibold tracking-wide text-slate-300 group-hover:text-white transition-colors">${name}</span>
+                    `;
+                    coGuestsGrid.appendChild(card);
+                });
+            } else {
+                // If list empty, display generic friendly card
+                coGuestsGrid.innerHTML = `
+                    <div class="col-span-full bg-navy-luxury/40 border border-gold/10 rounded p-6 text-center italic text-slate-400 text-sm">
+                        Những người bạn thân thiết khác của Trung cũng sẽ có mặt chung vui!
+                    </div>
+                `;
+            }
+
+            // Display stored RSVP state if already RSVP'd
+            if (data.rsvpStatus && data.rsvpStatus !== "pending") {
+                showRsvpSuccess(data.rsvpStatus === "confirmed");
+            }
+
+            // Initialize GSAP Animation hooks once DOM is fully populated
+            initGsapAnimations();
+        }
+
+
+        // ================= RSVP SUBMIT LOGIC =================
+        const btnRsvpYes = document.getElementById("btnRsvpYes");
+        const btnRsvpNo = document.getElementById("btnRsvpNo");
+        const btnRsvpChange = document.getElementById("btnRsvpChange");
+
+        const rsvpActionArea = document.getElementById("rsvpActionArea");
+        const rsvpLoadingArea = document.getElementById("rsvpLoadingArea");
+        const rsvpSuccessArea = document.getElementById("rsvpSuccessArea");
+
+        btnRsvpYes.addEventListener("click", () => submitRsvp(true));
+        btnRsvpNo.addEventListener("click", () => submitRsvp(false));
+        btnRsvpChange.addEventListener("click", () => resetRsvpState());
+
+        async function submitRsvp(isAttending) {
+            // Show loading spinner
+            rsvpActionArea.classList.add("hidden");
+            rsvpLoadingArea.classList.remove("hidden");
+
+            const statusText = isAttending ? "confirmed" : "declined";
+
+            // Submit back to Google Sheet if GAS_API_URL exists
+            if (GAS_API_URL && GAS_API_URL.trim() !== "") {
+                try {
+                    // Send dynamic request as POST or GET query parameter
+                    const rsvpEndpoint = `${GAS_API_URL}?id=${currentGuestId}&action=rsvp&status=${statusText}`;
+                    const response = await fetch(rsvpEndpoint, { method: 'POST', mode: 'no-cors' });
+                    // Since Google Apps Script Web Apps frequently require no-cors redirection 
+                    // and might return 302, mode: 'no-cors' prevents CORS issues on submit.
+                } catch (error) {
+                    console.error("Failed to post RSVP to Apps Script:", error);
+                }
+            }
+
+            // Store in LocalStorage to persist
+            localStorage.setItem(`rsvp_${currentGuestId}`, statusText);
+            guestData.rsvpStatus = statusText;
+
+            // Trigger beautiful CSS and confetti animations
+            setTimeout(() => {
+                rsvpLoadingArea.classList.add("hidden");
+                rsvpSuccessArea.classList.remove("hidden");
+                showRsvpSuccess(isAttending);
+            }, 1000);
+        }
+
+        function showRsvpSuccess(isAttending) {
+            const icon = document.getElementById("successIcon");
+            const title = document.getElementById("successTitle");
+            const msg = document.getElementById("successMessage");
+
+            rsvpActionArea.classList.add("hidden");
+            rsvpLoadingArea.classList.add("hidden");
+            rsvpSuccessArea.classList.remove("hidden");
+
+            if (isAttending) {
+                icon.className = "w-16 h-16 rounded-full bg-amber-50 border-2 border-gold flex items-center justify-center text-gold text-2xl animate-bounce shadow-lg shadow-gold/25";
+                icon.innerHTML = `<i class="fas fa-graduation-cap"></i>`;
+                title.innerHTML = `Tuyệt vời! Hẹn gặp bạn nhé. 🎓`;
+                title.className = "font-serif text-2xl font-bold text-navy-dark";
+                msg.innerText = `Cảm ơn bạn đã xác nhận tham dự. Sự hiện diện của bạn là món quà ý nghĩa nhất đối với Trung trong ngày tốt nghiệp!`;
+
+                // Confetti Explosion
+                triggerConfettiExplosion();
+            } else {
+                icon.className = "w-16 h-16 rounded-full bg-rose-50 border-2 border-crimson flex items-center justify-center text-crimson text-2xl shadow-lg";
+                icon.innerHTML = `<i class="fas fa-heart"></i>`;
+                title.innerHTML = `Cảm ơn bạn đã phản hồi! ❤️`;
+                title.className = "font-serif text-2xl font-bold text-crimson";
+                msg.innerText = `Tiếc quá! Dù không thể gặp bạn lần này, Trung rất trân trọng tình cảm và sự quan tâm của bạn.`;
+            }
+        }
+
+        function resetRsvpState() {
+            // Remove local storage
+            localStorage.removeItem(`rsvp_${currentGuestId}`);
+            guestData.rsvpStatus = "pending";
+
+            // Anim state transition back
+            rsvpSuccessArea.classList.add("hidden");
+            rsvpActionArea.classList.remove("hidden");
+        }
+
+        function triggerConfettiExplosion() {
+            // Custom luxury gold-accent confetti explosion
+            const colors = ['#FDBB30', '#FFFFFF', '#00529C', '#1E75C4'];
+            const duration = 3 * 1000;
+            const end = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 4,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: colors
+                });
+                confetti({
+                    particleCount: 4,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: colors
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+
+
+        // ================= GSAP ANIMATIONS & EFFECTS =================
+        function initGsapAnimations() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Page Load Anims
+            gsap.from("#hero h1", {
+                duration: 1.5,
+                y: 50,
+                opacity: 0,
+                ease: "power4.out"
+            });
+
+            gsap.from("#hero p", {
+                duration: 1.5,
+                y: 30,
+                opacity: 0,
+                delay: 0.3,
+                ease: "power4.out"
+            });
+
+            gsap.from("#hero img", {
+                duration: 1.8,
+                scale: 1.15,
+                opacity: 0,
+                delay: 0.2,
+                ease: "power3.out"
+            });
+
+            gsap.from("#countdown", {
+                duration: 1.2,
+                y: 20,
+                opacity: 0,
+                delay: 0.5,
+                ease: "power3.out"
+            });
+
+            // Scroll trigger reveals
+            gsap.from("#inviteCard", {
+                scrollTrigger: {
+                    trigger: "#invitation",
+                    start: "top 80%",
+                },
+                duration: 1.2,
+                y: 60,
+                opacity: 0,
+                ease: "power3.out"
+            });
+
+            gsap.from("#coGuestsSection .text-center, #coGuestsGrid > div", {
+                scrollTrigger: {
+                    trigger: "#coGuestsSection",
+                    start: "top 80%",
+                },
+                duration: 1,
+                y: 30,
+                opacity: 0,
+                stagger: 0.15,
+                ease: "power2.out"
+            });
+
+            gsap.from("#details .timeline-item", {
+                scrollTrigger: {
+                    trigger: "#details",
+                    start: "top 75%",
+                },
+                duration: 1,
+                x: -30,
+                opacity: 0,
+                stagger: 0.2,
+                ease: "power2.out"
+            });
+
+            gsap.from("#activities .grid > div", {
+                scrollTrigger: {
+                    trigger: "#activities",
+                    start: "top 75%",
+                },
+                duration: 1,
+                y: 40,
+                opacity: 0,
+                stagger: 0.15,
+                ease: "power3.out"
+            });
+
+            gsap.from("#rsvpContainer", {
+                scrollTrigger: {
+                    trigger: "#rsvp",
+                    start: "top 80%",
+                },
+                duration: 1.2,
+                scale: 0.95,
+                opacity: 0,
+                ease: "power3.out"
+            });
+        }
+
+
+        // ================= PAGE INITIALIZATION =================
+        window.addEventListener("DOMContentLoaded", () => {
+            createDustParticles();
+            initCountdown();
+            loadGuestData();
+        });
+    </script>
+</body>
+</html>
