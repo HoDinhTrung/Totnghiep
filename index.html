@@ -25,17 +25,17 @@
                 extend: {
                     colors: {
                         navy: {
-                            DEFAULT: '#00529C', // Deep NEU Blue
-                            dark: '#02386E',
-                            light: '#1E75C4',
-                            luxury: '#030712',  // Ultra dark base
-                            card: '#0a1224'
+                            DEFAULT: '#004B87', // Xanh lam chu dao
+                            dark: '#003560',
+                            light: '#1C72B8',
+                            luxury: '#002B5C',  // Xanh lam dam quy phai
+                            card: '#003B6F'
                         },
-                        gold: {
-                            DEFAULT: '#FDBB30', // Luxury NEU Gold Accent
-                            dark: '#DFA124',
-                            light: '#FED068',
-                            glow: 'rgba(253, 187, 48, 0.4)'
+                        grayAccent: {
+                            DEFAULT: '#757575', // Xam chu dao
+                            dark: '#4B4B4B',
+                            light: '#B0B0B0',
+                            glow: 'rgba(117, 117, 117, 0.4)'
                         },
                         crimson: {
                             DEFAULT: '#C8102E', // Accent Red
@@ -58,32 +58,32 @@
     <!-- Custom CSS styles for Luxury feeling -->
     <style type="text/css">
         .luxury-gradient-text {
-            background: linear-gradient(135deg, #FFFFFF 30%, #FDBB30 100%);
+            background: linear-gradient(135deg, #FFFFFF 30%, #757575 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .gold-border-glow {
-            box-shadow: 0 0 15px rgba(253, 187, 48, 0.15), inset 0 0 15px rgba(253, 187, 48, 0.05);
-            border: 1px solid rgba(253, 187, 48, 0.3);
+        .gray-border-glow {
+            box-shadow: 0 0 15px rgba(117, 117, 117, 0.25), inset 0 0 15px rgba(117, 117, 117, 0.1);
+            border: 1px solid rgba(117, 117, 117, 0.4);
         }
-        .gold-border-glow-active {
-            box-shadow: 0 0 25px rgba(253, 187, 48, 0.4), inset 0 0 10px rgba(253, 187, 48, 0.2);
-            border: 1px solid rgba(253, 187, 48, 0.8);
+        .gray-border-glow-active {
+            box-shadow: 0 0 25px rgba(117, 117, 117, 0.6), inset 0 0 10px rgba(117, 117, 117, 0.3);
+            border: 1px solid rgba(117, 117, 117, 0.9);
         }
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #030712;
+            background: #002B5C;
         }
         ::-webkit-scrollbar-thumb {
-            background: #00529C;
+            background: #004B87;
             border-radius: 4px;
-            border: 2px solid #030712;
+            border: 2px solid #002B5C;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #FDBB30;
+            background: #757575;
         }
         /* Floating Dust Animation */
         @keyframes float-dust {
@@ -93,7 +93,7 @@
         }
         .dust-particle {
             position: absolute;
-            background: #FDBB30;
+            background: #757575;
             border-radius: 50%;
             pointer-events: none;
             animation: float-dust 8s infinite linear;
@@ -101,12 +101,12 @@
         .glass-invitation {
             background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(253, 187, 48, 0.25);
+            border: 1px solid rgba(117, 117, 117, 0.35);
         }
         .dark-glass-invitation {
-            background: rgba(10, 18, 36, 0.85);
+            background: rgba(0, 43, 92, 0.85);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(253, 187, 48, 0.2);
+            border: 1px solid rgba(117, 117, 117, 0.3);
         }
     </style>
 
@@ -117,7 +117,7 @@
 
     <!-- Ambient Sound Toggle (Optional elegant background element) -->
     <div class="fixed top-6 right-6 z-50">
-        <button id="musicToggle" class="bg-navy-luxury/80 border border-gold/40 text-gold hover:text-white hover:border-gold p-3 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm group shadow-lg" aria-label="Âm nhạc">
+        <button id="musicToggle" class="bg-navy-luxury/80 border border-grayAccent/40 text-grayAccent hover:text-white hover:border-grayAccent p-3 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm group shadow-lg" aria-label="Âm nhạc">
             <i class="fas fa-music text-sm group-hover:scale-110 transition-transform"></i>
             <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 ease-in-out whitespace-nowrap text-xs tracking-wider">ÂM NHẠC</span>
         </button>
@@ -134,23 +134,23 @@
         <!-- Background Overlay / Gradients -->
         <div class="absolute inset-0 bg-gradient-to-b from-navy-luxury/40 via-navy-luxury/80 to-navy-luxury pointer-events-none z-0"></div>
         <div class="absolute -top-40 -left-40 w-96 h-96 bg-navy/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-10 right-0 w-[40rem] h-[40rem] bg-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-0 w-[40rem] h-[40rem] bg-grayAccent/5 rounded-full blur-[120px] pointer-events-none"></div>
 
         <!-- Upper Tagline -->
         <div class="w-full text-center z-10 mt-6 md:mt-10">
-            <p class="font-sans text-xs md:text-sm uppercase tracking-super text-gold font-medium mb-3">LỜI MỜI TRÂN TRỌNG</p>
-            <div class="w-16 h-[1px] bg-gold mx-auto"></div>
+            <p class="font-sans text-xs md:text-sm uppercase tracking-super text-grayAccent font-medium mb-3">LỜI MỜI TRÂN TRỌNG</p>
+            <div class="w-16 h-[1px] bg-grayAccent mx-auto"></div>
         </div>
 
         <!-- Main Portrait & Name Integration -->
         <div class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center justify-center my-auto z-10">
             <!-- Left Text Content -->
             <div class="lg:col-span-5 text-center lg:text-left order-2 lg:order-1 flex flex-col justify-center">
-                <span class="font-serif italic text-2xl text-gold mb-1 block">Trân trọng kính mời dự</span>
+                <span class="font-serif italic text-2xl text-grayAccent mb-1 block">Trân trọng kính mời dự</span>
                 <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold tracking-wide uppercase text-white mb-2 leading-tight">
                     Lễ Tốt Nghiệp
                 </h1>
-                <div class="h-[2px] w-32 bg-gradient-to-r from-gold to-transparent my-4 mx-auto lg:mx-0"></div>
+                <div class="h-[2px] w-32 bg-gradient-to-r from-grayAccent to-transparent my-4 mx-auto lg:mx-0"></div>
                 <p class="font-serif italic text-xl md:text-2xl text-slate-300 font-light max-w-md mx-auto lg:mx-0 leading-relaxed">
                     Đánh dấu mốc hành trình trưởng thành đầy ý nghĩa của Hồ Đình Trung.
                 </p>
@@ -158,15 +158,15 @@
                 <!-- Event Metadata -->
                 <div class="mt-8 space-y-3 font-sans text-sm md:text-base text-slate-400">
                     <div class="flex items-center justify-center lg:justify-start gap-3">
-                        <span class="text-gold text-base w-6 text-center"><i class="far fa-calendar-alt"></i></span>
+                        <span class="text-grayAccent text-base w-6 text-center"><i class="far fa-calendar-alt"></i></span>
                         <span class="tracking-wide">Chủ Nhật, ngày 23 tháng 08 năm 2026</span>
                     </div>
                     <div class="flex items-center justify-center lg:justify-start gap-3">
-                        <span class="text-gold text-base w-6 text-center"><i class="far fa-clock"></i></span>
+                        <span class="text-grayAccent text-base w-6 text-center"><i class="far fa-clock"></i></span>
                         <span class="tracking-wide">09:00 AM (Đón khách từ 08:00 AM)</span>
                     </div>
                     <div class="flex items-center justify-center lg:justify-start gap-3">
-                        <span class="text-gold text-base w-6 text-center"><i class="fas fa-map-marker-alt"></i></span>
+                        <span class="text-grayAccent text-base w-6 text-center"><i class="fas fa-map-marker-alt"></i></span>
                         <span class="tracking-wide">Trường Đại học Kinh tế Quốc dân (NEU)</span>
                     </div>
                 </div>
@@ -175,10 +175,10 @@
             <!-- Right Portrait Image -->
             <div class="lg:col-span-7 flex justify-center items-center order-1 lg:order-2 relative px-4">
                 <!-- Golden Background Frame -->
-                <div class="absolute top-4 left-8 md:left-16 w-[75%] h-[95%] border border-gold/40 rounded-sm pointer-events-none transform -rotate-3 z-0 transition-transform duration-700 hover:rotate-0"></div>
+                <div class="absolute top-4 left-8 md:left-16 w-[75%] h-[95%] border border-grayAccent/40 rounded-sm pointer-events-none transform -rotate-3 z-0 transition-transform duration-700 hover:rotate-0"></div>
                 
                 <!-- Image Wrapper with Tilt -->
-                <div class="relative w-[85%] md:w-[75%] overflow-hidden rounded shadow-2xl z-10 gold-border-glow bg-navy-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
+                <div class="relative w-[85%] md:w-[75%] overflow-hidden rounded shadow-2xl z-10 gray-border-glow bg-navy-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
                     <img src="./trung_portrait.jpg" alt="Hồ Đình Trung" class="w-full object-cover aspect-[2/3] hover:scale-105 transition-transform duration-700 select-none">
                     
                     <!-- Overlay Overlay text blending with photo -->
@@ -186,7 +186,7 @@
                         <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold tracking-widest uppercase text-white leading-none">
                             HỒ ĐÌNH TRUNG
                         </h2>
-                        <span class="font-sans text-xs tracking-super text-gold font-semibold uppercase mt-2 block">CỬ NHÂN XUẤT SẮC - NEU</span>
+                        <span class="font-sans text-xs tracking-super text-grayAccent font-semibold uppercase mt-2 block">CỬ NHÂN XUẤT SẮC - NEU</span>
                     </div>
                 </div>
             </div>
@@ -196,29 +196,29 @@
         <div class="w-full max-w-4xl mx-auto flex flex-col items-center gap-8 z-10 mt-6">
             <!-- Countdown Grid -->
             <div id="countdown" class="grid grid-cols-4 gap-3 md:gap-6 text-center w-full max-w-xl px-2">
-                <div class="bg-navy-luxury/60 backdrop-blur-md rounded border border-gold/20 p-3 flex flex-col justify-center items-center min-w-[70px]">
-                    <span id="days" class="font-serif text-2xl md:text-4xl text-gold font-bold">00</span>
+                <div class="bg-navy-luxury/60 backdrop-blur-md rounded border border-grayAccent/20 p-3 flex flex-col justify-center items-center min-w-[70px]">
+                    <span id="days" class="font-serif text-2xl md:text-4xl text-grayAccent font-bold">00</span>
                     <span class="font-sans text-[10px] md:text-xs text-slate-400 tracking-wider uppercase mt-1">Ngày</span>
                 </div>
-                <div class="bg-navy-luxury/60 backdrop-blur-md rounded border border-gold/20 p-3 flex flex-col justify-center items-center min-w-[70px]">
-                    <span id="hours" class="font-serif text-2xl md:text-4xl text-gold font-bold">00</span>
+                <div class="bg-navy-luxury/60 backdrop-blur-md rounded border border-grayAccent/20 p-3 flex flex-col justify-center items-center min-w-[70px]">
+                    <span id="hours" class="font-serif text-2xl md:text-4xl text-grayAccent font-bold">00</span>
                     <span class="font-sans text-[10px] md:text-xs text-slate-400 tracking-wider uppercase mt-1">Giờ</span>
                 </div>
-                <div class="bg-navy-luxury/60 backdrop-blur-md rounded border border-gold/20 p-3 flex flex-col justify-center items-center min-w-[70px]">
-                    <span id="minutes" class="font-serif text-2xl md:text-4xl text-gold font-bold">00</span>
+                <div class="bg-navy-luxury/60 backdrop-blur-md rounded border border-grayAccent/20 p-3 flex flex-col justify-center items-center min-w-[70px]">
+                    <span id="minutes" class="font-serif text-2xl md:text-4xl text-grayAccent font-bold">00</span>
                     <span class="font-sans text-[10px] md:text-xs text-slate-400 tracking-wider uppercase mt-1">Phút</span>
                 </div>
-                <div class="bg-navy-luxury/60 backdrop-blur-md rounded border border-gold/20 p-3 flex flex-col justify-center items-center min-w-[70px]">
-                    <span id="seconds" class="font-serif text-2xl md:text-4xl text-gold font-bold">00</span>
+                <div class="bg-navy-luxury/60 backdrop-blur-md rounded border border-grayAccent/20 p-3 flex flex-col justify-center items-center min-w-[70px]">
+                    <span id="seconds" class="font-serif text-2xl md:text-4xl text-grayAccent font-bold">00</span>
                     <span class="font-sans text-[10px] md:text-xs text-slate-400 tracking-wider uppercase mt-1">Giây</span>
                 </div>
             </div>
 
             <!-- Scroll CTA Button -->
-            <a href="#invitation" class="group flex flex-col items-center gap-2 hover:text-gold transition-all duration-300">
-                <span class="font-sans text-xs tracking-super text-slate-400 group-hover:text-gold uppercase transition-colors">Xem Lời Mời</span>
-                <div class="w-8 h-8 rounded-full border border-slate-500 group-hover:border-gold flex items-center justify-center transition-colors">
-                    <i class="fas fa-chevron-down text-slate-400 group-hover:text-gold group-hover:translate-y-0.5 transition-all"></i>
+            <a href="#invitation" class="group flex flex-col items-center gap-2 hover:text-grayAccent transition-all duration-300">
+                <span class="font-sans text-xs tracking-super text-slate-400 group-hover:text-grayAccent uppercase transition-colors">Xem Lời Mời</span>
+                <div class="w-8 h-8 rounded-full border border-slate-500 group-hover:border-grayAccent flex items-center justify-center transition-colors">
+                    <i class="fas fa-chevron-down text-slate-400 group-hover:text-grayAccent group-hover:translate-y-0.5 transition-all"></i>
                 </div>
             </a>
         </div>
@@ -232,27 +232,27 @@
 
         <div class="max-w-4xl mx-auto flex flex-col items-center">
             <!-- Luxury Frame Card with Vanilla-Tilt -->
-            <div id="inviteCard" class="w-full glass-invitation rounded-lg p-8 md:p-16 shadow-2xl relative border-double border-4 border-gold/30" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-perspective="1200">
+            <div id="inviteCard" class="w-full glass-invitation rounded-lg p-8 md:p-16 shadow-2xl relative border-double border-4 border-grayAccent/30" data-tilt data-tilt-max="5" data-tilt-speed="300" data-tilt-perspective="1200">
                 
                 <!-- Corner Ornaments -->
-                <div class="absolute top-3 left-3 w-8 h-8 border-t border-l border-gold/60"></div>
-                <div class="absolute top-3 right-3 w-8 h-8 border-t border-r border-gold/60"></div>
-                <div class="absolute bottom-3 left-3 w-8 h-8 border-b border-l border-gold/60"></div>
-                <div class="absolute bottom-3 right-3 w-8 h-8 border-b border-r border-gold/60"></div>
+                <div class="absolute top-3 left-3 w-8 h-8 border-t border-l border-grayAccent/60"></div>
+                <div class="absolute top-3 right-3 w-8 h-8 border-t border-r border-grayAccent/60"></div>
+                <div class="absolute bottom-3 left-3 w-8 h-8 border-b border-l border-grayAccent/60"></div>
+                <div class="absolute bottom-3 right-3 w-8 h-8 border-b border-r border-grayAccent/60"></div>
 
                 <!-- Loading Spinner for API Fetching -->
                 <div id="inviteCardLoader" class="absolute inset-0 bg-white/95 rounded-lg flex flex-col justify-center items-center z-30 transition-opacity duration-500">
-                    <div class="w-12 h-12 border-4 border-navy border-t-gold rounded-full animate-spin mb-4"></div>
+                    <div class="w-12 h-12 border-4 border-navy border-t-grayAccent rounded-full animate-spin mb-4"></div>
                     <span class="font-serif italic text-lg text-navy-dark tracking-wide">Đang chuẩn bị thư mời...</span>
                 </div>
 
                 <!-- Card Header -->
                 <div class="text-center mb-10">
-                    <p class="font-sans text-xs tracking-super text-gold font-bold uppercase mb-2">LETTER OF INVITATION</p>
+                    <p class="font-sans text-xs tracking-super text-grayAccent font-bold uppercase mb-2">LETTER OF INVITATION</p>
                     <h3 id="inviteGreeting" class="font-serif text-3xl md:text-5xl lg:text-6xl font-bold tracking-normal text-navy-dark my-4">
                         Thân gửi Bạn Hiền
                     </h3>
-                    <div class="w-24 h-[1px] bg-gold mx-auto my-6"></div>
+                    <div class="w-24 h-[1px] bg-grayAccent mx-auto my-6"></div>
                 </div>
 
                 <!-- Card Body -->
@@ -263,7 +263,7 @@
                     </p>
 
                     <!-- Quote Block -->
-                    <div class="py-6 border-y border-gold/20 my-8">
+                    <div class="py-6 border-y border-grayAccent/20 my-8">
                         <p class="font-serif italic text-lg md:text-2xl text-navy font-light leading-relaxed">
                             "Một cột mốc sẽ ý nghĩa hơn khi có những người mình quý cùng chứng kiến."
                         </p>
@@ -280,17 +280,17 @@
     </section>
 
     <!-- ================= SECTION 3: CO-GUEST LIST ================= -->
-    <section id="coGuestsSection" class="relative py-28 px-4 md:px-8 bg-navy-luxury border-t border-gold/10 z-20">
+    <section id="coGuestsSection" class="relative py-28 px-4 md:px-8 bg-navy-luxury border-t border-grayAccent/10 z-20">
         <div class="absolute top-20 left-10 w-72 h-72 bg-navy/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-4xl mx-auto">
             <!-- Header -->
             <div class="text-center mb-16">
-                <span class="font-sans text-xs tracking-super text-gold font-bold uppercase block mb-3">NHỮNG NGƯỜI BẠN</span>
+                <span class="font-sans text-xs tracking-super text-grayAccent font-bold uppercase block mb-3">NHỮNG NGƯỜI BẠN</span>
                 <h2 id="coGuestTitle" class="font-serif text-3xl md:text-5xl font-bold tracking-wide text-white leading-snug">
                     Những người Bạn Hiền cũng có thể gặp tại buổi lễ
                 </h2>
-                <div class="w-16 h-[1px] bg-gold mx-auto my-5"></div>
+                <div class="w-16 h-[1px] bg-grayAccent mx-auto my-5"></div>
                 <p class="font-serif italic text-base md:text-lg text-slate-400 max-w-xl mx-auto">
                     Trung cũng đã mời một số người quen của bạn đến chung vui để ngày hội ngộ thêm trọn vẹn.
                 </p>
@@ -299,8 +299,8 @@
             <!-- List Grid -->
             <div id="coGuestsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 justify-center">
                 <!-- Template item for co-guests. JavaScript will populate this dynamically. -->
-                <div class="bg-navy-luxury/60 backdrop-blur-md rounded border border-gold/15 p-5 text-center flex flex-col justify-center items-center hover:border-gold/60 transition-all duration-300 group shadow-lg">
-                    <span class="text-gold text-lg mb-2"><i class="far fa-user"></i></span>
+                <div class="bg-navy-luxury/60 backdrop-blur-md rounded border border-grayAccent/15 p-5 text-center flex flex-col justify-center items-center hover:border-grayAccent/60 transition-all duration-300 group shadow-lg">
+                    <span class="text-grayAccent text-lg mb-2"><i class="far fa-user"></i></span>
                     <span class="font-sans text-sm font-medium tracking-wide text-slate-300 group-hover:text-white transition-colors">Những người bạn thân thiết</span>
                 </div>
             </div>
@@ -318,22 +318,22 @@
                 <!-- Left Column: Timeline -->
                 <div class="lg:col-span-6 space-y-12">
                     <div class="text-left mb-10">
-                        <span class="font-sans text-xs tracking-super text-gold font-bold uppercase block mb-3">LỊCH TRÌNH SỰ KIỆN</span>
+                        <span class="font-sans text-xs tracking-super text-grayAccent font-bold uppercase block mb-3">LỊCH TRÌNH SỰ KIỆN</span>
                         <h2 class="font-serif text-3xl md:text-4xl font-bold tracking-wide text-navy-dark">Dòng Thời Gian Buổi Lễ</h2>
                         <div class="w-16 h-[2px] bg-navy mt-4"></div>
                     </div>
 
                     <!-- Vertical Timeline Graphic -->
-                    <div class="relative pl-6 md:pl-8 border-l border-gold/30 space-y-10 py-2">
+                    <div class="relative pl-6 md:pl-8 border-l border-grayAccent/30 space-y-10 py-2">
                         
                         <!-- Event 1 -->
                         <div class="relative timeline-item transition-all duration-300">
                             <!-- Bullet node -->
-                            <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 md:w-5 md:h-5 rounded-full bg-white border-2 border-gold flex items-center justify-center">
+                            <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 md:w-5 md:h-5 rounded-full bg-white border-2 border-grayAccent flex items-center justify-center">
                                 <div class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-navy"></div>
                             </div>
                             <!-- Time Badge -->
-                            <span class="inline-block font-sans text-xs font-semibold tracking-wider text-gold bg-navy-luxury text-white px-3 py-1 rounded mb-3">08:00 AM</span>
+                            <span class="inline-block font-sans text-xs font-semibold tracking-wider text-grayAccent bg-navy-luxury text-white px-3 py-1 rounded mb-3">08:00 AM</span>
                             <!-- Event detail card -->
                             <div class="bg-slate-50 border border-slate-200/60 rounded p-5 shadow-sm hover:shadow-md transition-shadow">
                                 <h4 class="font-serif text-xl font-bold text-navy-dark">Đón khách & Đón tiếp</h4>
@@ -346,11 +346,11 @@
                         <!-- Event 2 -->
                         <div class="relative timeline-item transition-all duration-300">
                             <!-- Bullet node -->
-                            <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 md:w-5 md:h-5 rounded-full bg-white border-2 border-gold flex items-center justify-center">
+                            <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 md:w-5 md:h-5 rounded-full bg-white border-2 border-grayAccent flex items-center justify-center">
                                 <div class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-navy"></div>
                             </div>
                             <!-- Time Badge -->
-                            <span class="inline-block font-sans text-xs font-semibold tracking-wider text-gold bg-navy-luxury text-white px-3 py-1 rounded mb-3">08:30 AM</span>
+                            <span class="inline-block font-sans text-xs font-semibold tracking-wider text-grayAccent bg-navy-luxury text-white px-3 py-1 rounded mb-3">08:30 AM</span>
                             <!-- Event detail card -->
                             <div class="bg-slate-50 border border-slate-200/60 rounded p-5 shadow-sm hover:shadow-md transition-shadow">
                                 <h4 class="font-serif text-xl font-bold text-navy-dark">Tham dự Lễ Tốt Nghiệp Chính Thức</h4>
@@ -363,22 +363,22 @@
                         <!-- Event 3: Highlighted Item -->
                         <div class="relative timeline-item transition-all duration-300">
                             <!-- Bullet node (Glowing) -->
-                            <div class="absolute -left-[33px] md:-left-[41px] top-1 w-5 h-5 md:w-6 md:h-6 rounded-full bg-gold border-4 border-white flex items-center justify-center animate-pulse">
+                            <div class="absolute -left-[33px] md:-left-[41px] top-1 w-5 h-5 md:w-6 md:h-6 rounded-full bg-grayAccent border-4 border-white flex items-center justify-center animate-pulse">
                                 <div class="w-2 h-2 rounded-full bg-navy"></div>
                             </div>
                             <!-- Time Badge (Glowing Gold) -->
-                            <span class="inline-block font-sans text-xs font-bold tracking-wider text-navy-dark bg-gold px-4 py-1.5 rounded shadow mb-3">09:30 AM</span>
-                            <!-- Event detail card (Glowing gold-border-glow-active) -->
-                            <div class="bg-navy-luxury text-white rounded-lg p-6 shadow-2xl gold-border-glow-active transform hover:-translate-y-1 transition-all duration-300">
+                            <span class="inline-block font-sans text-xs font-bold tracking-wider text-navy-dark bg-grayAccent px-4 py-1.5 rounded shadow mb-3">09:30 AM</span>
+                            <!-- Event detail card (Glowing gray-border-glow-active) -->
+                            <div class="bg-navy-luxury text-white rounded-lg p-6 shadow-2xl gray-border-glow-active transform hover:-translate-y-1 transition-all duration-300">
                                 <div class="flex justify-between items-start flex-wrap gap-2">
-                                    <h4 class="font-serif text-xl md:text-2xl font-bold text-gold">Chụp ảnh kỷ niệm & Nhận quà lưu niệm</h4>
-                                    <span class="text-gold text-sm animate-bounce"><i class="fas fa-gift"></i> Đặc biệt</span>
+                                    <h4 class="font-serif text-xl md:text-2xl font-bold text-grayAccent">Chụp ảnh kỷ niệm & Nhận quà lưu niệm</h4>
+                                    <span class="text-grayAccent text-sm animate-bounce"><i class="fas fa-gift"></i> Đặc biệt</span>
                                 </div>
                                 <p class="font-sans text-sm text-slate-300 mt-3 leading-relaxed">
                                     Khoảnh khắc lưu giữ kỷ niệm cùng gia đình, bạn bè và nhận món quà lưu niệm nhỏ thiết kế riêng từ Trung.
                                 </p>
-                                <div class="mt-4 pt-3 border-t border-gold/30 flex items-center gap-2">
-                                    <span class="text-gold text-xs"><i class="fas fa-heart"></i></span>
+                                <div class="mt-4 pt-3 border-t border-grayAccent/30 flex items-center gap-2">
+                                    <span class="text-grayAccent text-xs"><i class="fas fa-heart"></i></span>
                                     <p class="font-serif italic text-xs md:text-sm text-slate-200">
                                         "Trung rất mong bạn có thể nán lại cùng chụp ảnh và chia sẻ khoảnh khắc đáng nhớ này."
                                     </p>
@@ -392,7 +392,7 @@
                 <!-- Right Column: Location & Google Maps -->
                 <div class="lg:col-span-6 space-y-12">
                     <div class="text-left mb-10">
-                        <span class="font-sans text-xs tracking-super text-gold font-bold uppercase block mb-3">ĐỊA ĐIỂM TỔ CHỨC</span>
+                        <span class="font-sans text-xs tracking-super text-grayAccent font-bold uppercase block mb-3">ĐỊA ĐIỂM TỔ CHỨC</span>
                         <h2 class="font-serif text-3xl md:text-4xl font-bold tracking-wide text-navy-dark">Trường Đại học Kinh tế Quốc dân (NEU)</h2>
                         <div class="w-16 h-[2px] bg-navy mt-4"></div>
                     </div>
@@ -404,8 +404,8 @@
                                 Công trình kiến trúc nổi bật và hiện đại nhất khuôn viên NEU. Lễ tốt nghiệp sẽ diễn ra trong không gian hội trường sang trọng của tòa nhà.
                             </p>
                             <div class="flex flex-col gap-2 font-sans text-xs text-slate-500">
-                                <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-gold w-4"></i> Cổng Giải Phóng: Số 207 đường Giải Phóng, Hai Bà Trưng, Hà Nội</span>
-                                <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-gold w-4"></i> Cổng Trần Đại Nghĩa: 213 - 215 Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội</span>
+                                <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-grayAccent w-4"></i> Cổng Giải Phóng: Số 207 đường Giải Phóng, Hai Bà Trưng, Hà Nội</span>
+                                <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-grayAccent w-4"></i> Cổng Trần Đại Nghĩa: 213 - 215 Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội</span>
                             </div>
                         </div>
 
@@ -425,7 +425,7 @@
                                         <i class="fas fa-route text-[10px]"></i>
                                         <span>Đường đi Cổng Giải Phóng</span>
                                     </a>
-                                    <a href="https://www.google.com/maps/search/?api=1&query=215+Trần+Đại+Nghĩa,+Đồng+Tâm,+Hai+Bà+Trưng,+Hà+Nội" target="_blank" class="bg-gold hover:bg-gold-dark text-navy-luxury font-sans text-xs font-bold py-3 px-4 rounded text-center transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=215+Trần+Đại+Nghĩa,+Đồng+Tâm,+Hai+Bà+Trưng,+Hà+Nội" target="_blank" class="bg-grayAccent hover:bg-grayAccent-dark text-navy-luxury font-sans text-xs font-bold py-3 px-4 rounded text-center transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
                                         <i class="fas fa-route text-[10px]"></i>
                                         <span>Đường đi Cổng Trần Đại Nghĩa</span>
                                     </a>
@@ -441,15 +441,15 @@
     </section>
 
     <!-- ================= SECTION 5: EXTRA ACTIVITIES ================= -->
-    <section id="activities" class="relative py-28 px-4 md:px-8 bg-navy-luxury border-t border-gold/10 z-20 overflow-hidden">
+    <section id="activities" class="relative py-28 px-4 md:px-8 bg-navy-luxury border-t border-grayAccent/10 z-20 overflow-hidden">
         <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-navy/15 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-6xl mx-auto">
             <!-- Header -->
             <div class="text-center mb-16">
-                <span class="font-sans text-xs tracking-super text-gold font-bold uppercase block mb-3">TRẢI NGHIỆM ĐỒNG HÀNH</span>
+                <span class="font-sans text-xs tracking-super text-grayAccent font-bold uppercase block mb-3">TRẢI NGHIỆM ĐỒNG HÀNH</span>
                 <h2 class="font-serif text-3xl md:text-5xl font-bold tracking-wide text-white leading-snug">Nếu Bạn Muốn Ở Lại Lâu Hơn...</h2>
-                <div class="w-16 h-[1px] bg-gold mx-auto my-5"></div>
+                <div class="w-16 h-[1px] bg-grayAccent mx-auto my-5"></div>
                 <p class="font-serif italic text-base md:text-lg text-slate-400 max-w-xl mx-auto">
                     Ngoài buổi lễ chính, chúng ta có thể cùng nhau tham gia một vài hoạt động thú vị xung quanh khuôn viên trường.
                 </p>
@@ -459,11 +459,11 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
                 <!-- Card 1 -->
-                <div class="relative rounded-lg overflow-hidden h-72 group shadow-xl border border-gold/10 hover:border-gold/50 transition-all duration-500">
+                <div class="relative rounded-lg overflow-hidden h-72 group shadow-xl border border-grayAccent/10 hover:border-grayAccent/50 transition-all duration-500">
                     <div class="absolute inset-0 bg-cover bg-center filter brightness-[0.35] group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none" style="background-image: url('./neu_campus.jpg');"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-navy-luxury via-navy-luxury/40 to-transparent"></div>
                     <div class="absolute inset-0 p-6 flex flex-col justify-end">
-                        <span class="text-gold text-2xl mb-3 block"><i class="far fa-comments"></i></span>
+                        <span class="text-grayAccent text-2xl mb-3 block"><i class="far fa-comments"></i></span>
                         <h4 class="font-serif text-xl font-bold text-white mb-2">Ngồi trò chuyện</h4>
                         <p class="font-sans text-xs text-slate-300 leading-relaxed">
                             Cùng nhau ngồi lại, trò chuyện chia sẻ những dự định sắp tới và cập nhật tình hình cuộc sống sau chuỗi ngày bận rộn.
@@ -472,11 +472,11 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="relative rounded-lg overflow-hidden h-72 group shadow-xl border border-gold/10 hover:border-gold/50 transition-all duration-500">
+                <div class="relative rounded-lg overflow-hidden h-72 group shadow-xl border border-grayAccent/10 hover:border-grayAccent/50 transition-all duration-500">
                     <div class="absolute inset-0 bg-cover bg-center filter brightness-[0.35] group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none" style="background-image: url('./neu_campus.jpg'); background-position: right top;"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-navy-luxury via-navy-luxury/40 to-transparent"></div>
                     <div class="absolute inset-0 p-6 flex flex-col justify-end">
-                        <span class="text-gold text-2xl mb-3 block"><i class="fas fa-university"></i></span>
+                        <span class="text-grayAccent text-2xl mb-3 block"><i class="fas fa-university"></i></span>
                         <h4 class="font-serif text-xl font-bold text-white mb-2">Tham quan khuôn viên</h4>
                         <p class="font-sans text-xs text-slate-300 leading-relaxed">
                             Khám phá Tòa nhà Thế kỷ nguy nga và dạo bước quanh không gian hiện đại, năng động đậm chất NEU.
@@ -485,11 +485,11 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="relative rounded-lg overflow-hidden h-72 group shadow-xl border border-gold/10 hover:border-gold/50 transition-all duration-500">
+                <div class="relative rounded-lg overflow-hidden h-72 group shadow-xl border border-grayAccent/10 hover:border-grayAccent/50 transition-all duration-500">
                     <div class="absolute inset-0 bg-cover bg-center filter brightness-[0.35] group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none" style="background-image: url('./neu_campus.jpg'); background-position: left bottom;"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-navy-luxury via-navy-luxury/40 to-transparent"></div>
                     <div class="absolute inset-0 p-6 flex flex-col justify-end">
-                        <span class="text-gold text-2xl mb-3 block"><i class="fas fa-mug-hot"></i></span>
+                        <span class="text-grayAccent text-2xl mb-3 block"><i class="fas fa-mug-hot"></i></span>
                         <h4 class="font-serif text-xl font-bold text-white mb-2">Thưởng thức cà phê</h4>
                         <p class="font-sans text-xs text-slate-300 leading-relaxed">
                             Nhâm nhi ly cà phê đậm vị ngay trong khuôn viên trường, cảm nhận nhịp sống thanh xuân trẻ trung của các sinh viên.
@@ -498,11 +498,11 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="relative rounded-lg overflow-hidden h-72 group shadow-xl border border-gold/10 hover:border-gold/50 transition-all duration-500">
+                <div class="relative rounded-lg overflow-hidden h-72 group shadow-xl border border-grayAccent/10 hover:border-grayAccent/50 transition-all duration-500">
                     <div class="absolute inset-0 bg-cover bg-center filter brightness-[0.35] group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none" style="background-image: url('./trung_portrait.jpg');"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-navy-luxury via-navy-luxury/40 to-transparent"></div>
                     <div class="absolute inset-0 p-6 flex flex-col justify-end">
-                        <span class="text-gold text-2xl mb-3 block"><i class="fas fa-camera-retro"></i></span>
+                        <span class="text-grayAccent text-2xl mb-3 block"><i class="fas fa-camera-retro"></i></span>
                         <h4 class="font-serif text-xl font-bold text-white mb-2">Chụp ảnh lưu niệm</h4>
                         <p class="font-sans text-xs text-slate-300 leading-relaxed">
                             Lưu lại những bức ảnh kỷ niệm thật đẹp tại các góc sống ảo triệu view trong giảng đường thế kỷ. 😌
@@ -521,7 +521,7 @@
         <div class="max-w-3xl mx-auto text-center relative z-10">
             <!-- Header -->
             <div class="mb-12">
-                <span class="font-sans text-xs tracking-super text-gold font-bold uppercase block mb-3">XÁC NHẬN THAM DỰ (RSVP)</span>
+                <span class="font-sans text-xs tracking-super text-grayAccent font-bold uppercase block mb-3">XÁC NHẬN THAM DỰ (RSVP)</span>
                 <h2 id="rsvpTitle" class="font-serif text-3xl md:text-5xl font-bold tracking-wide text-navy-dark leading-tight">
                     Hẹn gặp Bạn Hiền tại lễ tốt nghiệp nhé!
                 </h2>
@@ -556,7 +556,7 @@
 
                 <!-- Loading State (hidden initially) -->
                 <div id="rsvpLoadingArea" class="hidden flex flex-col justify-center items-center py-6 space-y-4">
-                    <div class="w-10 h-10 border-4 border-navy border-t-gold rounded-full animate-spin"></div>
+                    <div class="w-10 h-10 border-4 border-navy border-t-grayAccent rounded-full animate-spin"></div>
                     <span class="font-serif italic text-base text-navy-dark">Đang gửi phản hồi của bạn...</span>
                 </div>
 
@@ -570,7 +570,7 @@
                         Cảm ơn bạn đã xác nhận tham dự. Sự hiện diện của bạn là niềm vinh hạnh lớn đối với Trung!
                     </p>
                     
-                    <button id="btnRsvpChange" class="mt-6 font-sans text-xs text-navy hover:text-gold hover:underline font-semibold uppercase tracking-wider flex items-center gap-2">
+                    <button id="btnRsvpChange" class="mt-6 font-sans text-xs text-navy hover:text-grayAccent hover:underline font-semibold uppercase tracking-wider flex items-center gap-2">
                         <i class="fas fa-edit"></i> Thay đổi lựa chọn
                     </button>
                 </div>
@@ -579,11 +579,11 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-navy-luxury border-t border-gold/10 py-12 px-4 text-center text-slate-400 text-xs md:text-sm z-20 relative">
+    <footer class="bg-navy-luxury border-t border-grayAccent/10 py-12 px-4 text-center text-slate-400 text-xs md:text-sm z-20 relative">
         <div class="max-w-4xl mx-auto space-y-4">
             <h4 class="font-serif text-lg text-white font-medium tracking-widest uppercase">LỄ TỐT NGHIỆP HỒ ĐÌNH TRUNG</h4>
             <p class="font-sans font-light tracking-wide">Trường Đại học Kinh tế Quốc dân (NEU) | 23.08.2026</p>
-            <div class="w-16 h-[1px] bg-gold/30 mx-auto"></div>
+            <div class="w-16 h-[1px] bg-grayAccent/30 mx-auto"></div>
             <p class="font-sans text-[10px] text-slate-500 uppercase tracking-widest">
                 Thiết kế bởi Đội ngũ Kiến trúc UI/UX Cao cấp | &copy; 2026 Hồ Đình Trung. All rights reserved.
             </p>
@@ -604,7 +604,7 @@
         // ================= CONFIGURATION =================
         // Đường dẫn API Web App của Google Apps Script. 
         // Khi cấu hình thành công, dán URL vào đây.
-        const GAS_API_URL = ""; 
+        const GAS_API_URL = "https://script.google.com/macros/s/AKfycbwcZz9o2XptEcxMbsQGq2k8aRVCVgNqToK3ZIYqyonBg4hMkghJegaFYDwaEUBSrHdu/exec"; 
 
         // Thời gian diễn ra sự kiện đếm ngược (09:00 AM ngày 23/08/2026)
         const EVENT_DATE = new Date("Aug 23, 2026 09:00:00").getTime();
@@ -650,13 +650,13 @@
             if (isMusicPlaying) {
                 bgMusic.pause();
                 musicToggle.querySelector("i").className = "fas fa-music text-sm";
-                musicToggle.classList.remove("border-gold");
-                musicToggle.classList.add("border-gold/40");
+                musicToggle.classList.remove("border-grayAccent");
+                musicToggle.classList.add("border-grayAccent/40");
             } else {
                 bgMusic.play().catch(e => console.log("Music play blocked by browser auto-play policy."));
                 musicToggle.querySelector("i").className = "fas fa-pause text-sm";
-                musicToggle.classList.remove("border-gold/40");
-                musicToggle.classList.add("border-gold");
+                musicToggle.classList.remove("border-grayAccent/40");
+                musicToggle.classList.add("border-grayAccent");
             }
             isMusicPlaying = !isMusicPlaying;
         });
@@ -697,7 +697,7 @@
                 if (distance < 0) {
                     clearInterval(countdownTimer);
                     document.getElementById("countdown").innerHTML = `
-                        <div class="col-span-4 bg-navy-luxury/80 border border-gold/30 rounded p-4 text-gold font-serif italic text-lg md:text-xl tracking-wider text-center">
+                        <div class="col-span-4 bg-navy-luxury/80 border border-grayAccent/30 rounded p-4 text-grayAccent font-serif italic text-lg md:text-xl tracking-wider text-center">
                             Buổi lễ đã chính thức diễn ra!
                         </div>
                     `;
@@ -787,8 +787,8 @@
             document.getElementById("inviteMessage").innerText = data.customMessage;
             
             // Section Titles
-            document.getElementById("coGuestTitle").innerHTML = `Những người <span class="italic text-gold">${data.guestName}</span> cũng có thể gặp tại buổi lễ`;
-            document.getElementById("rsvpTitle").innerHTML = `Hẹn gặp <span class="italic text-gold">${data.guestName}</span> tại lễ tốt nghiệp nhé!`;
+            document.getElementById("coGuestTitle").innerHTML = `Những người <span class="italic text-grayAccent">${data.guestName}</span> cũng có thể gặp tại buổi lễ`;
+            document.getElementById("rsvpTitle").innerHTML = `Hẹn gặp <span class="italic text-grayAccent">${data.guestName}</span> tại lễ tốt nghiệp nhé!`;
 
             // Update browser document title
             document.title = `Lễ Tốt Nghiệp Hồ Đình Trung - Lời Mời Trân Trọng gửi ${data.guestName}`;
@@ -800,9 +800,9 @@
             if (data.coGuests && data.coGuests.length > 0) {
                 data.coGuests.forEach(name => {
                     const card = document.createElement("div");
-                    card.className = "bg-navy-luxury/60 backdrop-blur-md rounded border border-gold/15 p-5 text-center flex flex-col justify-center items-center hover:border-gold/60 hover:-translate-y-1 transition-all duration-300 group shadow-lg";
+                    card.className = "bg-navy-luxury/60 backdrop-blur-md rounded border border-grayAccent/15 p-5 text-center flex flex-col justify-center items-center hover:border-grayAccent/60 hover:-translate-y-1 transition-all duration-300 group shadow-lg";
                     card.innerHTML = `
-                        <span class="text-gold text-base mb-2 group-hover:scale-110 transition-transform"><i class="far fa-user"></i></span>
+                        <span class="text-grayAccent text-base mb-2 group-hover:scale-110 transition-transform"><i class="far fa-user"></i></span>
                         <span class="font-sans text-sm font-semibold tracking-wide text-slate-300 group-hover:text-white transition-colors">${name}</span>
                     `;
                     coGuestsGrid.appendChild(card);
@@ -810,7 +810,7 @@
             } else {
                 // If list empty, display generic friendly card
                 coGuestsGrid.innerHTML = `
-                    <div class="col-span-full bg-navy-luxury/40 border border-gold/10 rounded p-6 text-center italic text-slate-400 text-sm">
+                    <div class="col-span-full bg-navy-luxury/40 border border-grayAccent/10 rounded p-6 text-center italic text-slate-400 text-sm">
                         Những người bạn thân thiết khác của Trung cũng sẽ có mặt chung vui!
                     </div>
                 `;
@@ -881,7 +881,7 @@
             rsvpSuccessArea.classList.remove("hidden");
 
             if (isAttending) {
-                icon.className = "w-16 h-16 rounded-full bg-amber-50 border-2 border-gold flex items-center justify-center text-gold text-2xl animate-bounce shadow-lg shadow-gold/25";
+                icon.className = "w-16 h-16 rounded-full bg-blue-50 border-2 border-navy flex items-center justify-center text-navy text-2xl animate-bounce shadow-lg shadow-navy/25";
                 icon.innerHTML = `<i class="fas fa-graduation-cap"></i>`;
                 title.innerHTML = `Tuyệt vời! Hẹn gặp bạn nhé. 🎓`;
                 title.className = "font-serif text-2xl font-bold text-navy-dark";
@@ -909,8 +909,8 @@
         }
 
         function triggerConfettiExplosion() {
-            // Custom luxury gold-accent confetti explosion
-            const colors = ['#FDBB30', '#FFFFFF', '#00529C', '#1E75C4'];
+            // Custom luxury blue & gray-accent confetti explosion
+            const colors = ['#004B87', '#757575', '#B0B0B0', '#FFFFFF'];
             const duration = 3 * 1000;
             const end = Date.now() + duration;
 
