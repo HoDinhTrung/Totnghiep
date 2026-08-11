@@ -285,23 +285,19 @@
 
         <div class="max-w-4xl mx-auto">
             <!-- Header -->
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <span class="font-sans text-xs tracking-super text-grayAccent font-bold uppercase block mb-3">NHỮNG NGƯỜI BẠN</span>
                 <h2 id="coGuestTitle" class="font-serif text-3xl md:text-5xl font-bold tracking-wide text-white leading-snug">
                     Những người Bạn Hiền cũng có thể gặp tại buổi lễ
                 </h2>
                 <div class="w-16 h-[1px] bg-grayAccent mx-auto my-5"></div>
-                <p class="font-serif italic text-base md:text-lg text-slate-400 max-w-xl mx-auto">
-                    Trung cũng đã mời một số người quen của bạn đến chung vui để ngày hội ngộ thêm trọn vẹn.
-                </p>
             </div>
 
             <!-- List Grid -->
-            <div id="coGuestsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 justify-center">
-                <!-- Template item for co-guests. JavaScript will populate this dynamically. -->
-                <div class="bg-navy-luxury/60 backdrop-blur-md rounded border border-grayAccent/15 p-5 text-center flex flex-col justify-center items-center hover:border-grayAccent/60 transition-all duration-300 group shadow-lg">
-                    <span class="text-grayAccent text-lg mb-2"><i class="far fa-user"></i></span>
-                    <span class="font-sans text-sm font-medium tracking-wide text-slate-300 group-hover:text-white transition-colors">Những người bạn thân thiết</span>
+            <div id="coGuestsGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto justify-center">
+                <!-- Template item for co-guests (Pure Text Elegance - No Avatars) -->
+                <div class="border border-grayAccent/25 rounded px-6 py-4 text-center bg-navy-luxury/40 hover:border-grayAccent/70 transition-all duration-300 group shadow-md flex items-center justify-center min-h-[60px]">
+                    <span class="font-sans text-xs md:text-sm font-semibold tracking-widest text-slate-300 group-hover:text-white uppercase transition-colors">Những người bạn thân thiết</span>
                 </div>
             </div>
         </div>
@@ -842,24 +838,23 @@
             // Update browser document title
             document.title = `Lễ Tốt Nghiệp Hồ Đình Trung - Lời Mời Trân Trọng gửi ${data.guestName}`;
 
-            // Render Co-guests List
+            // Render Co-guests List (Pure Text Elegance - No Avatars)
             const coGuestsGrid = document.getElementById("coGuestsGrid");
             coGuestsGrid.innerHTML = ""; // Clear template
 
             if (data.coGuests && data.coGuests.length > 0) {
                 data.coGuests.forEach(name => {
                     const card = document.createElement("div");
-                    card.className = "bg-navy-luxury/60 backdrop-blur-md rounded border border-grayAccent/15 p-5 text-center flex flex-col justify-center items-center hover:border-grayAccent/60 hover:-translate-y-1 transition-all duration-300 group shadow-lg";
+                    card.className = "border border-grayAccent/25 rounded px-6 py-4 text-center bg-navy-luxury/40 hover:border-grayAccent/70 hover:-translate-y-0.5 transition-all duration-300 group shadow-md flex items-center justify-center min-h-[60px]";
                     card.innerHTML = `
-                        <span class="text-grayAccent text-base mb-2 group-hover:scale-110 transition-transform"><i class="far fa-user"></i></span>
-                        <span class="font-sans text-sm font-semibold tracking-wide text-slate-300 group-hover:text-white transition-colors">${name}</span>
+                        <span class="font-sans text-xs md:text-sm font-semibold tracking-widest text-slate-300 group-hover:text-white uppercase transition-colors">${name}</span>
                     `;
                     coGuestsGrid.appendChild(card);
                 });
             } else {
                 // If list empty, display generic friendly card
                 coGuestsGrid.innerHTML = `
-                    <div class="col-span-full bg-navy-luxury/40 border border-grayAccent/10 rounded p-6 text-center italic text-slate-400 text-sm">
+                    <div class="col-span-full border border-grayAccent/15 bg-navy-luxury/40 rounded p-6 text-center italic text-slate-400 text-xs md:text-sm">
                         Những người bạn thân thiết khác của Trung cũng sẽ có mặt chung vui!
                     </div>
                 `;
@@ -1041,7 +1036,7 @@
                 ease: "power3.out"
             });
 
-            gsap.from("#coGuestsSection .text-center, #coGuestsGrid > div", {
+            gsap.from("#coGuestsSection .text-center", {
                 scrollTrigger: {
                     trigger: "#coGuestsSection",
                     start: "top 80%",
