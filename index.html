@@ -602,11 +602,15 @@
 
     <script>
         // ================= CONFIGURATION =================
-        // Đường dẫn API Web App của Google Apps Script. 
-        // Khi cấu hình thành công, dán URL vào đây.
+        // 1. Đường dẫn API Web App của Google Apps Script (Dùng để ghi nhận phản hồi RSVP)
         const GAS_API_URL = "https://script.google.com/macros/s/AKfycbwcZz9o2XptEcxMbsQGq2k8aRVCVgNqToK3ZIYqyonBg4hMkghJegaFYDwaEUBSrHdu/exec"; 
 
-        // Thời gian diễn ra sự kiện đếm ngược (09:00 AM ngày 23/08/2026)
+        // 2. ID của bảng tính Google Sheets (Dùng để ĐỌC dữ liệu siêu tốc dưới 0.3 giây)
+        // Cách lấy: Copy chuỗi ký tự nằm giữa /d/ và /edit trong link Google Sheet của bạn.
+        // Ví dụ: https://docs.google.com/spreadsheets/d/1A_B_C_D_XYZ/edit -> ID là: "1A_B_C_D_XYZ"
+        const GOOGLE_SHEET_ID = "13j7qZpcEH_APRvZov8YLhnn33Jpuc__gVKgADr6Va0s"; 
+
+        // 3. Thời gian diễn ra sự kiện đếm ngược (09:00 AM ngày 23/08/2026)
         const EVENT_DATE = new Date("Aug 23, 2026 09:00:00").getTime();
 
         // Dữ liệu Mock kiểm thử khi chạy offline hoặc lúc chưa thiết lập API
@@ -723,17 +727,64 @@
             const slug = urlParams.get('id');
             
             if (!slug) {
-                // No slug specified, use default guest settings immediately
                 renderGuestInterface(DEFAULT_GUEST);
                 return;
             }
 
             currentGuestId = slug;
-
-            // Check if local storage already has RSVP response for this guest
             const localRsvp = localStorage.getItem(`rsvp_${slug}`);
 
-            // Fetch from Google Apps Script if URL provided
+            // PHƯƠNG ÁN 1: Đọc trực tiếp từ Google Sheets gviz API (Siêu tốc < 0.3s)
+            if (GOOGLE_SHEET_ID && GOOGLE_SHEET_ID.trim() !== "") {
+                try {
+                    const gvizUrl = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:json&sheet=Guests`;
+                    const response = await fetch(gvizUrl);
+                    if (!response.ok) throw new Error("Google Sheets gviz API error");
+                    
+                    const text = await response.text();
+                    // Cắt chuỗi JSON từ cấu trúc Query của Google
+                    const jsonString = text.substring(text.indexOf('{'), text.lastIndexOf('}') + 1);
+                    const json = JSON.parse(jsonString);
+                    
+                    const rows = json.table.rows;
+                    const cols = json.table.cols.map(c => c.label ? c.label.trim() : "");
+                    
+                    // Tìm chỉ số các cột
+                    const colIdIdx = cols.findIndex(c => c.toLowerCase() === "id");
+                    const colNameIdx = cols.findIndex(c => c.toLowerCase() === "guestname");
+                    const colMessageIdx = cols.findIndex(c => c.toLowerCase() === "custommessage");
+                    const colCoGuestsIdx = cols.findIndex(c => c.toLowerCase() === "coguests");
+                    const colRsvpIdx = cols.findIndex(c => c.toLowerCase() === "rsvpstatus");
+
+                    if (colIdIdx !== -1 && colNameIdx !== -1) {
+                        // Tìm dòng chứa id trùng khớp
+                        const targetRow = rows.find(r => r.c[colIdIdx] && String(r.c[colIdIdx].v).trim() === slug);
+                        
+                        if (targetRow) {
+                            const rawCoGuests = (targetRow.c[colCoGuestsIdx] && targetRow.c[colCoGuestsIdx].v) ? String(targetRow.c[colCoGuestsIdx].v).trim() : "";
+                            let coGuestsList = [];
+                            if (rawCoGuests !== "" && rawCoGuests !== "-" && rawCoGuests !== "null") {
+                                coGuestsList = rawCoGuests.split(",").map(item => item.trim()).filter(item => item !== "");
+                            }
+
+                            guestData = {
+                                id: slug,
+                                guestName: targetRow.c[colNameIdx] ? String(targetRow.c[colNameIdx].v).trim() : "Bạn Hiền",
+                                customMessage: targetRow.c[colMessageIdx] ? String(targetRow.c[colMessageIdx].v).trim() : DEFAULT_GUEST.customMessage,
+                                coGuests: coGuestsList,
+                                rsvpStatus: localRsvp || (targetRow.c[colRsvpIdx] ? String(targetRow.c[colRsvpIdx].v).trim() : "pending")
+                            };
+                            
+                            renderGuestInterface(guestData);
+                            return;
+                        }
+                    }
+                } catch (error) {
+                    console.warn("Google Sheets gviz API failed, falling back to Apps Script Web App. Error:", error);
+                }
+            }
+
+            // PHƯƠNG ÁN 2: Dự phòng gọi qua Google Apps Script Web App
             if (GAS_API_URL && GAS_API_URL.trim() !== "") {
                 try {
                     const response = await fetch(`${GAS_API_URL}?id=${slug}`);
@@ -756,22 +807,20 @@
                 }
             }
 
-            // Fallback to local Mock Database
+            // PHƯƠNG ÁN 3: Sử dụng Mock Database nội bộ
             if (MOCK_DATABASE[slug]) {
                 guestData = { ...MOCK_DATABASE[slug] };
             } else {
                 guestData = { ...DEFAULT_GUEST, id: slug };
             }
 
-            // Apply local RSVP state if exists
             if (localRsvp) {
                 guestData.rsvpStatus = localRsvp;
             }
 
-            // Simulate slight network delay for ultra premium UX transition effect
             setTimeout(() => {
                 renderGuestInterface(guestData);
-            }, 800);
+            }, 500);
         }
 
         function renderGuestInterface(data) {
@@ -823,6 +872,13 @@
 
             // Initialize GSAP Animation hooks once DOM is fully populated
             initGsapAnimations();
+
+            // Refresh ScrollTrigger để tính toán chính xác vị trí hiển thị cho coGuests khi tải động
+            setTimeout(() => {
+                if (window.ScrollTrigger) {
+                    ScrollTrigger.refresh();
+                }
+            }, 100);
         }
 
 
