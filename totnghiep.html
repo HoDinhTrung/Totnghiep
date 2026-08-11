@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thiệp Mời Tốt Nghiệp</title>
+
+  <!-- Tailwind CSS (Styling) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP (Core & Text Animation) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- Vanilla-Tilt (3D Hover Effect) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,800;1,400&display=swap');
+    
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #030712;
+    }
+
+    /* Glassmorphism Effect */
+    .glass-card {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transform-style: preserve-3d;
+    }
+
+    .preserve-3d {
+      transform-style: preserve-3d;
+    }
+
+    .translate-z-10 { transform: translateZ(30px); }
+    .translate-z-20 { transform: translateZ(50px); }
+  </style>
+</head>
+<body class="min-h-screen text-slate-100 flex items-center justify-center p-4 relative overflow-hidden">
+
+  <!-- Background Animated Lights -->
+  <div class="bg-glow absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="bg-glow absolute bottom-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-indigo-500/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+  <!-- Main Envelope / Card Wrapper -->
+  <div class="w-full max-w-md perspective-1000">
+
+    <!-- Card Container with Vanilla-Tilt -->
+    <div id="tilt-card" class="glass-card rounded-3xl p-8 shadow-2xl shadow-indigo-950/50 opacity-0 relative preserve-3d">
+      
+      <!-- Top Badge -->
+      <div class="gsap-item translate-z-10 text-center mb-4">
+        <span class="inline-block px-3 py-1 bg-amber-400/10 text-amber-300 text-xs font-semibold rounded-full border border-amber-400/20 uppercase tracking-widest">
+          🎓 Graduation Invitation
+        </span>
+      </div>
+
+      <!-- Header Icon & Title -->
+      <div class="gsap-item translate-z-20 text-center mb-6">
+        <div class="text-6xl mb-3 inline-block filter drop-shadow-lg">🎓</div>
+        <h1 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-100 tracking-tight">
+          LỄ TỐT NGHIỆP
+        </h1>
+        <p class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Class of 2026</p>
+      </div>
+
+      <!-- Guest Name Section -->
+      <div class="gsap-item translate-z-10 text-center mb-6">
+        <p class="text-slate-400 text-xs uppercase tracking-widest mb-1">Trân trọng kính mời</p>
+        <h2 id="guest-name" class="text-2xl font-bold text-cyan-300 tracking-wide min-h-[32px]">
+          ...
+        </h2>
+      </div>
+
+      <!-- Personalized Message Box -->
+      <div class="gsap-item translate-z-10 bg-slate-900/80 p-5 rounded-2xl border border-white/10 mb-6 relative overflow-hidden min-h-[90px] flex items-center">
+        <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-amber-400 to-indigo-500"></div>
+        <p id="guest-msg" class="text-slate-200 text-sm leading-relaxed italic font-normal">
+          Đang tải lời nhắn dành riêng cho bạn...
+        </p>
+      </div>
+
+      <!-- Event Info Grid -->
+      <div class="gsap-item translate-z-10 bg-white/5 rounded-2xl p-4 mb-6 space-y-3 text-xs text-slate-300 border border-white/5">
+        <div class="flex items-center gap-3">
+          <span class="p-2 bg-amber-400/10 text-amber-400 rounded-lg">📍</span>
+          <div>
+            <p class="font-semibold text-slate-200">Địa điểm</p>
+            <p class="text-slate-400">Hội trường A - Trường Đại học Tech</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="p-2 bg-indigo-400/10 text-indigo-400 rounded-lg">⏰</span>
+          <div>
+            <p class="font-semibold text-slate-200">Thời gian</p>
+            <p class="text-slate-400">08:30 AM | Thứ Bảy, 20/09/2026</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <div class="gsap-item translate-z-20">
+        <button onclick="fireConfetti()" class="w-full py-4 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 font-extrabold rounded-2xl shadow-lg shadow-amber-500/20 transition transform active:scale-95 flex items-center justify-center gap-2">
+          <span>BẮN PHÁO CHÚC MỪNG</span>
+          <span>🎉</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // 1. Cấu hình Google Apps Script Web App URL của bạn
+    const GAS_API_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
+
+    // 2. Lấy parameter `?id=...` từ URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const guestId = urlParams.get('id') || 'default';
+
+    // 3. Khởi tạo hiệu ứng Vanilla-Tilt cho tấm thiệp 3D
+    VanillaTilt.init(document.querySelector("#tilt-card"), {
+      max: 12,            // Góc nghiêng tối đa (độ)
+      speed: 1000,        // Tốc độ hồi phục
+      glare: true,        // Hiệu ứng phản chiếu ánh sáng (Glare)
+      "max-glare": 0.25,  // Độ sáng của phản chiếu
+      gyroscope: true     // Bật cảm biến nghiêng điện thoại
+    });
+
+    // 4. GSAP Animation Timeline
+    function runEntranceAnimation() {
+      const tl = gsap.timeline({ defaults: { ease: "power4.out", duration: 1 } });
+
+      // Xuất hiện nền mờ
+      tl.to("#tilt-card", {
+        opacity: 1,
+        y: 0,
+        duration: 1.2
+      })
+      // Stagger từng dòng nội dung trượt từ dưới lên
+      .from(".gsap-item", {
+        opacity: 0,
+        y: 30,
+        stagger: 0.12,
+        duration: 0.8
+      }, "-=0.8")
+      // Hiệu ứng thở nhẹ cho Background Lights
+      .to(".bg-glow", {
+        scale: 1.2,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      }, 0);
+    }
+
+    // 5. Fetch dữ liệu từ Google Sheets
+    async function loadGuestData() {
+      try {
+        const response = await fetch(`${GAS_API_URL}?id=${guestId}`);
+        const data = await response.json();
+
+        if (data && !data.error) {
+          document.getElementById('guest-name').innerText = data.name;
+          document.getElementById('guest-msg').innerText = `"${data.msg}"`;
+        } else {
+          document.getElementById('guest-name').innerText = "Bạn Hiền";
+          document.getElementById('guest-msg').innerText = '"Rất mong bạn dành chút thời gian đến chụp tấm hình kỷ niệm cùng mình nha!"';
+        }
+      } catch (err) {
+        console.warn("Không kết nối được DB, dùng dữ liệu mặc định.");
+        document.getElementById('guest-name').innerText = "Khách Quý";
+        document.getElementById('guest-msg').innerText = '"Sự hiện diện của bạn là niềm vinh hạnh lớn nhất của mình!"';
+      } finally {
+        // Chạy animation khi đã load xong dữ liệu
+        runEntranceAnimation();
+      }
+    }
+
+    // 6. Hiệu ứng bắn Pháo hoa (Confetti)
+    function fireConfetti() {
+      // Bắn 2 đợt pháo hoa từ 2 góc dưới màn hình
+      confetti({
+        particleCount: 80,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0, y: 0.8 }
+      });
+      confetti({
+        particleCount: 80,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1, y: 0.8 }
+      });
+    }
+
+    // Chạy khi trang web load xong
+    window.onload = () => {
+      loadGuestData();
+    };
+  </script>
+</body>
+</html>
