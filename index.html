@@ -293,11 +293,11 @@
                 <div class="w-16 h-[1px] bg-grayAccent mx-auto my-5"></div>
             </div>
 
-            <!-- List Grid -->
-            <div id="coGuestsGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto justify-center">
-                <!-- Template item for co-guests (Pure Text Elegance - No Avatars) -->
-                <div class="border border-grayAccent/25 rounded px-6 py-4 text-center bg-navy-luxury/40 hover:border-grayAccent/70 transition-all duration-300 group shadow-md flex items-center justify-center min-h-[60px]">
-                    <span class="font-sans text-xs md:text-sm font-semibold tracking-widest text-slate-300 group-hover:text-white uppercase transition-colors">Những người bạn thân thiết</span>
+            <!-- List Grid (Flexbox centered, White bg for high contrast, no avatar) -->
+            <div id="coGuestsGrid" class="flex flex-wrap gap-4 justify-center max-w-4xl mx-auto">
+                <!-- Template item for co-guests (Pure Text Elegance - High Contrast) -->
+                <div class="bg-white border border-slate-200 rounded px-6 py-3 text-center shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 min-w-[150px] max-w-[250px] flex-1 flex items-center justify-center min-h-[50px]">
+                    <span class="font-sans text-xs md:text-sm font-bold tracking-widest text-navy uppercase">Những người bạn thân thiết</span>
                 </div>
             </div>
         </div>
