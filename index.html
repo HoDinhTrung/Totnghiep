@@ -149,11 +149,11 @@
                 <div class="mt-8 space-y-3 font-sans text-sm md:text-base text-slate-400">
                     <div class="flex items-center justify-center lg:justify-start gap-3">
                         <span class="text-grayAccent text-base w-6 text-center"><i class="far fa-calendar-alt"></i></span>
-                        <span class="tracking-wide">Chủ Nhật, ngày 23 tháng 08 năm 2026</span>
+                        <span class="tracking-wide">Thứ Bảy, ngày 22 tháng 08 năm 2026</span>
                     </div>
                     <div class="flex items-center justify-center lg:justify-start gap-3">
                         <span class="text-grayAccent text-base w-6 text-center"><i class="far fa-clock"></i></span>
-                        <span class="tracking-wide">09:00 AM (Đón khách từ 08:00 AM)</span>
+                        <span class="tracking-wide">13:30 - 18:00 (Đón tiếp: 13:30 - 14:20 &amp; 16:00 - 18:00)</span>
                     </div>
                     <div class="flex items-center justify-center lg:justify-start gap-3">
                         <span class="text-grayAccent text-base w-6 text-center"><i class="fas fa-map-marker-alt"></i></span>
@@ -270,7 +270,7 @@
     </section>
 
     <!-- ================= SECTION 3: CO-GUEST LIST (Section riêng biệt cuộn xuống xem) ================= -->
-    <section id="coGuestsSection" class="relative py-24 px-4 md:px-8 bg-navy-luxury border-t border-grayAccent/10 z-20">
+    <section id="coGuestsSection" class="hidden relative py-24 px-4 md:px-8 bg-navy-luxury border-t border-grayAccent/10 z-20">
         <div class="absolute top-20 left-10 w-72 h-72 bg-navy/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-4xl mx-auto">
@@ -311,56 +311,68 @@
                     <!-- Vertical Timeline Graphic -->
                     <div class="relative pl-6 md:pl-8 border-l border-grayAccent/30 space-y-10 py-2">
                         
-                        <!-- Event 1 -->
-                        <div class="relative timeline-item transition-all duration-300">
-                            <!-- Bullet node -->
-                            <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 md:w-5 md:h-5 rounded-full bg-white border-2 border-grayAccent flex items-center justify-center">
-                                <div class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-navy"></div>
-                            </div>
-                            <!-- Time Badge -->
-                            <span class="inline-block font-sans text-xs font-semibold tracking-wider text-grayAccent bg-navy-luxury text-white px-3 py-1 rounded mb-3">08:00 AM</span>
-                            <!-- Event detail card -->
-                            <div class="bg-slate-50 border border-slate-200/60 rounded p-5 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="font-serif text-xl font-bold text-navy-dark">Đón khách & Đón tiếp</h4>
-                                <p class="font-sans text-sm text-slate-600 mt-2 leading-relaxed">
-                                    Chào mừng quý khách đến với khuôn viên trường NEU. Tranh thủ gặp gỡ, trò chuyện trước khi buổi lễ chính thức bắt đầu.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Event 2 -->
-                        <div class="relative timeline-item transition-all duration-300">
-                            <!-- Bullet node -->
-                            <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 md:w-5 md:h-5 rounded-full bg-white border-2 border-grayAccent flex items-center justify-center">
-                                <div class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-navy"></div>
-                            </div>
-                            <!-- Time Badge -->
-                            <span class="inline-block font-sans text-xs font-semibold tracking-wider text-grayAccent bg-navy-luxury text-white px-3 py-1 rounded mb-3">08:30 AM</span>
-                            <!-- Event detail card -->
-                            <div class="bg-slate-50 border border-slate-200/60 rounded p-5 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="font-serif text-xl font-bold text-navy-dark">Tham dự Lễ Tốt Nghiệp Chính Thức</h4>
-                                <p class="font-sans text-sm text-slate-600 mt-2 leading-relaxed">
-                                    Tham gia khoảnh khắc trao bằng cử nhân và các nghi thức tốt nghiệp trang trọng tại hội trường chính.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Event 3: Highlighted Item -->
+                        <!-- Event 1: Welcome slot 1 (Highlighted) -->
                         <div class="relative timeline-item transition-all duration-300">
                             <!-- Bullet node (Glowing) -->
                             <div class="absolute -left-[33px] md:-left-[41px] top-1 w-5 h-5 md:w-6 md:h-6 rounded-full bg-grayAccent border-4 border-white flex items-center justify-center animate-pulse">
                                 <div class="w-2 h-2 rounded-full bg-navy"></div>
                             </div>
                             <!-- Time Badge (Glowing Gold) -->
-                            <span class="inline-block font-sans text-xs font-bold tracking-wider text-navy-dark bg-grayAccent px-4 py-1.5 rounded shadow mb-3">09:30 AM</span>
+                            <span class="inline-block font-sans text-xs font-bold tracking-wider text-navy-dark bg-grayAccent px-4 py-1.5 rounded shadow mb-3">13:30 - 14:20</span>
                             <!-- Event detail card (Glowing gray-border-glow-active) -->
                             <div class="bg-navy-luxury text-white rounded-lg p-6 shadow-2xl gray-border-glow-active transform hover:-translate-y-1 transition-all duration-300">
                                 <div class="flex justify-between items-start flex-wrap gap-2">
-                                    <h4 class="font-serif text-xl md:text-2xl font-bold text-grayAccent">Chụp ảnh kỷ niệm & Nhận quà lưu niệm</h4>
-                                    <span class="text-grayAccent text-sm animate-bounce"><i class="fas fa-gift"></i> Đặc biệt</span>
+                                    <h4 class="font-serif text-xl md:text-2xl font-bold text-grayAccent">Đón tiếp, Chụp ảnh &amp; Nhận quà lưu niệm (Đợt 1)</h4>
+                                    <span class="text-emerald-400 text-xs font-bold bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20 flex items-center gap-1 animate-pulse"><i class="fas fa-check-circle"></i> Có Thể Đón Tiếp</span>
                                 </div>
                                 <p class="font-sans text-sm text-slate-300 mt-3 leading-relaxed">
-                                    Khoảnh khắc lưu giữ kỷ niệm cùng gia đình, bạn bè và nhận món quà lưu niệm nhỏ thiết kế riêng từ Trung.
+                                    Trung sẽ đón tiếp bạn tại sảnh tòa nhà thế kỷ A2. Tranh thủ gặp gỡ, trò chuyện trước khi buổi lễ chính thức bắt đầu và gửi tặng bạn những món quà lưu niệm thiết kế riêng nhé!
+                                </p>
+                                <div class="mt-4 pt-3 border-t border-grayAccent/30 flex items-center gap-2">
+                                    <span class="text-grayAccent text-xs"><i class="fas fa-camera"></i></span>
+                                    <p class="font-serif italic text-xs md:text-sm text-slate-200">
+                                        "Khung giờ đón tiếp lý tưởng đầu tiên dành cho các bạn đến sớm."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Event 2: Ceremony (Not Welcoming) -->
+                        <div class="relative timeline-item transition-all duration-300">
+                            <!-- Bullet node -->
+                            <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 md:w-5 md:h-5 rounded-full bg-white border-2 border-grayAccent flex items-center justify-center">
+                                <div class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-navy"></div>
+                            </div>
+                            <!-- Time Badge -->
+                            <span class="inline-block font-sans text-xs font-semibold tracking-wider text-grayAccent bg-navy-luxury text-white px-3 py-1 rounded mb-3">14:20 - 16:00</span>
+                            <!-- Event detail card -->
+                            <div class="bg-slate-50 border border-slate-200/60 rounded p-5 shadow-sm hover:shadow-md transition-shadow">
+                                <div class="flex justify-between items-start flex-wrap gap-2">
+                                    <h4 class="font-serif text-xl font-bold text-navy-dark">Trung tham dự Lễ tốt nghiệp chính thức</h4>
+                                    <span class="text-rose-600 text-xs font-bold bg-rose-50 px-2.5 py-1 rounded border border-rose-200 flex items-center gap-1"><i class="fas fa-ban"></i> Bận dự lễ tốt nghiệp</span>
+                                </div>
+                                <p class="font-sans text-sm text-slate-600 mt-2 leading-relaxed">
+                                    Thời gian diễn ra các nghi thức tốt nghiệp trang trọng tại hội trường chính. Trong suốt khung giờ này, Trung ở trong hội trường lớn nên <strong>không thể ra ngoài đón khách và chụp ảnh cùng được</strong>. Rất mong bạn thông cảm!
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Event 3: Welcome slot 2 (Highlighted) -->
+                        <div class="relative timeline-item transition-all duration-300">
+                            <!-- Bullet node (Glowing) -->
+                            <div class="absolute -left-[33px] md:-left-[41px] top-1 w-5 h-5 md:w-6 md:h-6 rounded-full bg-grayAccent border-4 border-white flex items-center justify-center animate-pulse">
+                                <div class="w-2 h-2 rounded-full bg-navy"></div>
+                            </div>
+                            <!-- Time Badge (Glowing Gold) -->
+                            <span class="inline-block font-sans text-xs font-bold tracking-wider text-navy-dark bg-grayAccent px-4 py-1.5 rounded shadow mb-3">16:00 - 18:00</span>
+                            <!-- Event detail card (Glowing gray-border-glow-active) -->
+                            <div class="bg-navy-luxury text-white rounded-lg p-6 shadow-2xl gray-border-glow-active transform hover:-translate-y-1 transition-all duration-300">
+                                <div class="flex justify-between items-start flex-wrap gap-2">
+                                    <h4 class="font-serif text-xl md:text-2xl font-bold text-grayAccent">Đón tiếp, Chụp ảnh &amp; Trò chuyện thân mật (Đợt 2)</h4>
+                                    <span class="text-emerald-400 text-xs font-bold bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20 flex items-center gap-1 animate-pulse"><i class="fas fa-check-circle"></i> Có Thể Đón Tiếp</span>
+                                </div>
+                                <p class="font-sans text-sm text-slate-300 mt-3 leading-relaxed">
+                                    Sau khi buổi lễ kết thúc, Trung sẽ tiếp tục đón tiếp, chụp ảnh kỷ niệm tại các góc check-in tuyệt đẹp của giảng đường thế kỷ A2 và khuôn viên NEU.
                                 </p>
                                 <div class="mt-4 pt-3 border-t border-grayAccent/30 flex items-center gap-2">
                                     <span class="text-grayAccent text-xs"><i class="fas fa-heart"></i></span>
@@ -500,7 +512,7 @@
     </section>
 
     <!-- ================= SECTION 6: RSVP & BACKEND WRITER ================= -->
-    <section id="rsvp" class="relative py-32 px-4 md:px-8 bg-white text-navy-luxury z-20 overflow-hidden">
+    <section id="rsvp" class="hidden relative py-32 px-4 md:px-8 bg-white text-navy-luxury z-20 overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(#00529c_0.8px,transparent_0.8px)] [background-size:24px_24px] opacity-[0.03]"></div>
         
         <div class="max-w-3xl mx-auto text-center relative z-10">
@@ -567,7 +579,7 @@
     <footer class="bg-navy-luxury border-t border-grayAccent/10 py-12 px-4 text-center text-slate-400 text-xs md:text-sm z-20 relative">
         <div class="max-w-4xl mx-auto space-y-4">
             <h4 class="font-serif text-lg text-white font-medium tracking-widest uppercase">LỄ TỐT NGHIỆP HỒ ĐÌNH TRUNG</h4>
-            <p class="font-sans font-light tracking-wide">Trường Đại học Kinh tế Quốc dân (NEU) | 23.08.2026</p>
+            <p class="font-sans font-light tracking-wide">Trường Đại học Kinh tế Quốc dân (NEU) | 22.08.2026</p>
             <div class="w-16 h-[1px] bg-grayAccent/30 mx-auto"></div>
             <p class="font-sans text-[10px] text-slate-500 uppercase tracking-widest">
                 Thiết kế bởi Đội ngũ Kiến trúc UI/UX Cao cấp | &copy; 2026 Hồ Đình Trung. All rights reserved.
@@ -590,39 +602,18 @@
         // Đường dẫn API Web App của Google Apps Script (Bảo mật 100%, chống xem lén Sheet)
         const GAS_API_URL = "https://script.google.com/macros/s/AKfycbwcZz9o2XptEcxMbsQGq2k8aRVCVgNqToK3ZIYqyonBg4hMkghJegaFYDwaEUBSrHdu/exec"; 
 
-        // Thời gian diễn ra sự kiện đếm ngược (09:00 AM ngày 23/08/2026)
-        const EVENT_DATE = new Date("Aug 23, 2026 09:00:00").getTime();
-
-        // Dữ liệu Mock kiểm thử khi chạy offline hoặc lúc chưa thiết lập API
-        const MOCK_DATABASE = {
-            "nam-nguyen": {
-                "id": "nam-nguyen",
-                "guestName": "Nguyễn Văn Nam",
-                "customMessage": "Sau một hành trình dài học tập và tích lũy tại giảng đường NEU, Trung cuối cùng cũng đã đi đến một cột mốc tốt nghiệp đặc biệt. Những năm tháng qua thật đáng quý khi có sự đồng hành và hỗ trợ của Nam. Rất mong Nam có thể dành chút thời gian đến chung vui cùng Trung trong ngày nhận bằng!",
-                "coGuests": ["Trần Văn Bình", "Phạm Văn Cường", "Lê Văn Dương"],
-                "rsvpStatus": "pending"
-            },
-            "an-tran": {
-                "id": "an-tran",
-                "guestName": "Trần Thanh An",
-                "customMessage": "Ngày tốt nghiệp của Trung chắc chắn sẽ vui hơn rất nhiều nếu có sự góp mặt của An. Cùng nhau ghi dấu khoảnh khắc kết thúc thời sinh viên tươi đẹp này nhé. Rất mong An sẽ đến chung vui và chụp thật nhiều bức hình đẹp!",
-                "coGuests": ["Nguyễn Thị Bích", "Lê Hoàng Long"],
-                "rsvpStatus": "pending"
-            }
-        };
-
-        const DEFAULT_GUEST = {
-            "id": "default",
-            "guestName": "Bro",
-            "customMessage": "Sau một hành trình dài học tập và tích lũy tại giảng đường NEU, Trung cuối cùng cũng đã đi đến một cột mốc tốt nghiệp đặc biệt. Rất mong bạn có thể dành chút thời gian đến chung vui và ghi lại những kỷ niệm đẹp cùng Trung trong ngày nhận bằng!",
-            "coGuests": ["Những người bạn thân thiết của Trung"],
-            "rsvpStatus": "pending"
-        };
-
+        // Thời gian diễn ra sự kiện đếm ngược (13:30 ngày 22/08/2026)
+        const EVENT_DATE = new Date("Aug 22, 2026 13:30:00").getTime();
 
         // ================= GLOBAL STATE =================
-        let currentGuestId = "default";
-        let guestData = { ...DEFAULT_GUEST };
+        let currentGuestId = "";
+        let guestData = {
+            id: "",
+            guestName: "",
+            customMessage: "",
+            coGuests: [],
+            rsvpStatus: "pending"
+        };
 
 
 
@@ -682,59 +673,85 @@
         }
 
 
+        // ================= LOADING ERROR HANDLING =================
+        function showLoadingError(message) {
+            const loader = document.getElementById("inviteCardLoader");
+            if (loader) {
+                loader.innerHTML = `
+                    <div class="text-center p-6 max-w-md z-40">
+                        <div class="w-16 h-16 rounded-full bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-500 text-2xl mx-auto mb-4 animate-bounce">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold text-navy-dark mb-2">Lỗi Tải Thư Mời</h4>
+                        <p class="font-sans text-sm text-slate-600 leading-relaxed mb-6">
+                            ${message}<br>
+                            <span class="text-xs text-slate-400 mt-2 block">Vui lòng kiểm tra lại liên kết hoặc nhấn nút bên dưới để tải lại trang.</span>
+                        </p>
+                        <button onclick="window.location.reload()" class="bg-navy hover:bg-navy-dark text-white font-sans text-xs font-bold py-2.5 px-6 rounded shadow transition-all flex items-center justify-center gap-2 mx-auto">
+                            <i class="fas fa-sync-alt"></i> Tải lại trang
+                        </button>
+                    </div>
+                `;
+                loader.style.opacity = "1";
+            }
+            // Hide coGuestsSection and rsvp section when failed to load
+            const coGuestsSec = document.getElementById("coGuestsSection");
+            const rsvpSec = document.getElementById("rsvp");
+            if (coGuestsSec) coGuestsSec.classList.add("hidden");
+            if (rsvpSec) rsvpSec.classList.add("hidden");
+        }
+
         // ================= DYNAMIC DATA FETCHING & RENDER =================
         async function loadGuestData() {
             const urlParams = new URLSearchParams(window.location.search);
             const slug = urlParams.get('id');
             
             if (!slug) {
-                renderGuestInterface(DEFAULT_GUEST);
+                showLoadingError("Không tìm thấy mã khách mời (ID) trên liên kết thư mời.");
                 return;
             }
 
             currentGuestId = slug;
             const localRsvp = localStorage.getItem(`rsvp_${slug}`);
 
-            // Đọc dữ liệu bảo mật qua cổng Google Apps Script Web App API
-            if (GAS_API_URL && GAS_API_URL.trim() !== "") {
-                try {
-                    const response = await fetch(`${GAS_API_URL}?id=${slug}`);
-                    if (!response.ok) throw new Error("API Network Response error");
-                    const data = await response.json();
-                    
-                    if (data && data.guestName) {
-                        guestData = {
-                            id: data.id || slug,
-                            guestName: data.guestName,
-                            customMessage: data.customMessage || DEFAULT_GUEST.customMessage,
-                            coGuests: data.coGuests || DEFAULT_GUEST.coGuests,
-                            rsvpStatus: localRsvp || data.rsvpStatus || "pending"
-                        };
-                        renderGuestInterface(guestData);
-                        return;
-                    }
-                } catch (error) {
-                    console.warn("GAS API failed or timed out. Falling back to Mock Database/Defaults. Error:", error);
+            if (!GAS_API_URL || GAS_API_URL.trim() === "") {
+                showLoadingError("Đường dẫn kết nối cơ sở dữ liệu chưa được thiết lập.");
+                return;
+            }
+
+            try {
+                // Đọc dữ liệu bảo mật qua cổng Google Apps Script Web App API
+                const response = await fetch(`${GAS_API_URL}?id=${slug}`);
+                if (!response.ok) throw new Error("Không thể kết nối với máy chủ API.");
+                const data = await response.json();
+                
+                if (data && data.guestName) {
+                    guestData = {
+                        id: data.id || slug,
+                        guestName: data.guestName,
+                        customMessage: data.customMessage || "",
+                        coGuests: data.coGuests || [],
+                        rsvpStatus: localRsvp || data.rsvpStatus || "pending"
+                    };
+                    renderGuestInterface(guestData);
+                } else if (data && data.error) {
+                    throw new Error(`Cơ sở dữ liệu báo lỗi: ${data.error}`);
+                } else {
+                    throw new Error("Không tìm thấy thông tin khách mời tương ứng.");
                 }
+            } catch (error) {
+                console.error("Database fetch error:", error);
+                showLoadingError(error.message || "Đã xảy ra lỗi không xác định khi truy xuất cơ sở dữ liệu.");
             }
-
-            // PHƯƠNG ÁN 3: Sử dụng Mock Database nội bộ
-            if (MOCK_DATABASE[slug]) {
-                guestData = { ...MOCK_DATABASE[slug] };
-            } else {
-                guestData = { ...DEFAULT_GUEST, id: slug };
-            }
-
-            if (localRsvp) {
-                guestData.rsvpStatus = localRsvp;
-            }
-
-            setTimeout(() => {
-                renderGuestInterface(guestData);
-            }, 500);
         }
 
         function renderGuestInterface(data) {
+            const coGuestsSec = document.getElementById("coGuestsSection");
+            const rsvpSec = document.getElementById("rsvp");
+            
+            // Show RSVP section
+            if (rsvpSec) rsvpSec.classList.remove("hidden");
+
             // Remove Loader
             const loader = document.getElementById("inviteCardLoader");
             if (loader) {
@@ -758,6 +775,7 @@
             coGuestsGrid.innerHTML = ""; // Clear template
 
             if (data.coGuests && data.coGuests.length > 0) {
+                if (coGuestsSec) coGuestsSec.classList.remove("hidden");
                 data.coGuests.forEach(name => {
                     const card = document.createElement("div");
                     card.className = "bg-white border border-slate-200 rounded-lg px-6 py-3.5 text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 min-w-[150px] max-w-[240px] flex-1 flex items-center justify-center min-h-[54px]";
@@ -767,11 +785,7 @@
                     coGuestsGrid.appendChild(card);
                 });
             } else {
-                coGuestsGrid.innerHTML = `
-                    <div class="w-full border border-grayAccent/20 bg-white/10 rounded-lg p-6 text-center italic text-slate-300 text-xs md:text-sm">
-                        Những người bạn thân thiết khác của Trung cũng sẽ có mặt chung vui!
-                    </div>
-                `;
+                if (coGuestsSec) coGuestsSec.classList.add("hidden");
             }
 
             // Display stored RSVP state if already RSVP'd
