@@ -855,7 +855,7 @@
                 try {
                     // Send dynamic request as POST or GET query parameter
                     const rsvpEndpoint = `${GAS_API_URL}?id=${currentGuestId}&action=rsvp&status=${statusText}`;
-                    await fetch(rsvpEndpoint, { method: 'POST', mode: 'no-cors' });
+                    await fetch(rsvpEndpoint, { method: 'GET', mode: 'no-cors' });
                 } catch (error) {
                     console.error("Failed to post RSVP to Apps Script:", error);
                 }
