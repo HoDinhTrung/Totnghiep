@@ -730,7 +730,6 @@
             }
 
             currentGuestId = slug;
-            const localRsvp = localStorage.getItem(`rsvp_${slug}`);
 
             if (!GAS_API_URL || GAS_API_URL.trim() === "") {
                 showLoadingError("Đường dẫn kết nối cơ sở dữ liệu chưa được thiết lập.");
@@ -749,7 +748,7 @@
                         guestName: data.guestName,
                         customMessage: data.customMessage || "",
                         coGuests: data.coGuests || [],
-                        rsvpStatus: localRsvp || data.rsvpStatus || "pending"
+                        rsvpStatus: data.rsvpStatus || "pending"
                     };
                     renderGuestInterface(guestData);
                 } else if (data && data.error) {
@@ -810,10 +809,7 @@
                 if (coGuestsSec) coGuestsSec.classList.add("hidden");
             }
 
-            // Display stored RSVP state if already RSVP'd
-            if (data.rsvpStatus && data.rsvpStatus !== "pending") {
-                showRsvpSuccess(data.rsvpStatus === "confirmed");
-            }
+
 
             // Initialize GSAP Animation hooks once DOM is fully populated
             initGsapAnimations();
@@ -845,16 +841,21 @@
             rsvpActionArea.classList.add("hidden");
             rsvpLoadingArea.classList.remove("hidden");
 
-            const statusText = isAttending ? "confirmed" : "declined";
+            let statusText = "pending";
+            if (isAttending) {
+                let count = parseInt(guestData.rsvpStatus) || 0;
+                count += 1;
+                statusText = String(count);
+            } else {
+                statusText = "declined";
+            }
 
             // Submit back to Google Sheet if GAS_API_URL exists
             if (GAS_API_URL && GAS_API_URL.trim() !== "") {
                 try {
                     // Send dynamic request as POST or GET query parameter
                     const rsvpEndpoint = `${GAS_API_URL}?id=${currentGuestId}&action=rsvp&status=${statusText}`;
-                    const response = await fetch(rsvpEndpoint, { method: 'POST', mode: 'no-cors' });
-                    // Since Google Apps Script Web Apps frequently require no-cors redirection 
-                    // and might return 302, mode: 'no-cors' prevents CORS issues on submit.
+                    await fetch(rsvpEndpoint, { method: 'POST', mode: 'no-cors' });
                 } catch (error) {
                     console.error("Failed to post RSVP to Apps Script:", error);
                 }
