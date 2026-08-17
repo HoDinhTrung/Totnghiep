@@ -37,16 +37,21 @@ function doGet(e) {
     const dataRange = sheet.getDataRange();
     const values = dataRange.getValues();
     
-    // Tìm tiêu đề cột để xác định chỉ số
-    const headers = values[0];
+    // Tìm tiêu đề cột để xác định chỉ số (chuẩn hóa chữ thường và loại bỏ khoảng trắng)
+    const headers = values[0].map(function(h) {
+      return String(h).trim().toLowerCase();
+    });
+    
     const colIdIdx = headers.indexOf("id");
-    const colNameIdx = headers.indexOf("guestName");
-    const colMessageIdx = headers.indexOf("customMessage");
-    const colCoGuestsIdx = headers.indexOf("coGuests");
-    const colRsvpIdx = headers.indexOf("rsvpStatus");
+    const colNameIdx = headers.indexOf("guestname");
+    const colMessageIdx = headers.indexOf("custommessage");
+    const colCoGuestsIdx = headers.indexOf("coguests");
+    const colRsvpIdx = headers.indexOf("rsvpstatus");
 
     if (colIdIdx === -1 || colNameIdx === -1 || colMessageIdx === -1 || colCoGuestsIdx === -1 || colRsvpIdx === -1) {
-      return createJsonResponse({ error: "Invalid sheet structure. Headers must include: id, guestName, customMessage, coGuests, rsvpStatus" });
+      return createJsonResponse({ 
+        error: "Invalid sheet structure. Headers found: " + values[0].join(", ") + ". Expected columns (case-insensitive): id, guestName, customMessage, coGuests, rsvpStatus" 
+      });
     }
 
     // Tìm dòng tương ứng với id khách mời

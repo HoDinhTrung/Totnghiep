@@ -63,11 +63,31 @@ Hãy nhập thử dòng dữ liệu sau vào bảng tính để kiểm tra:
    // Khi cấu hình thành công, dán URL vào đây.
    const GAS_API_URL = ""; 
    ```
-3. Dán URL Ứng dụng web bạn vừa sao chép ở Bước 2 vào giữa hai dấu nháy kép. Ví dụ:
-   ```javascript
-   const GAS_API_URL = "https://script.google.com/macros/s/AKfycbxyz.../exec"; 
-   ```
-4. Lưu file `index.html`.
+3. Dán URL Ứng dụng web bạn vừa sao chép ở Bước 2 vào giữa hai dấu nháy kép của `GAS_API_URL`.
+
+---
+
+## BƯỚC 3.5: NÂNG CẤP HYBRID DATABASE (TẢI DỮ LIỆU SIÊU TỐC < 0.3 GIÂY)
+Để trang web của bạn không bị màn hình quay tròn (Loading) quá lâu khi mở thiệp (do Google Apps Script bị khởi động nguội mất 2-3 giây), hãy thiết lập cơ chế **Hybrid Database** bằng cách cho phép trang web đọc trực tiếp dữ liệu từ link bảng tính của bạn:
+
+1. **Chia sẻ bảng tính công khai (Read-only):**
+   * Trên bảng tính Google Sheets của bạn, nhấp vào nút **Chia sẻ (Share)** ở góc trên bên phải.
+   * Tại phần **Quyền truy cập chung (General access)**, đổi từ *Hạn chế (Restricted)* sang **Bất kỳ ai có liên kết (Anyone with the link)**.
+   * Đảm bảo vai trò là **Người xem (Viewer)**.
+2. **Lấy ID bảng tính Google Sheets:**
+   * Hãy nhìn vào URL trên trình duyệt khi bạn đang mở bảng tính. Nó sẽ có dạng:
+     `https://docs.google.com/spreadsheets/d/1A_B_C_D_XYZ/edit#gid=0`
+   * Copy chuỗi ký tự nằm giữa `/d/` và `/edit` (trong ví dụ trên là: `1A_B_C_D_XYZ`).
+3. **Cấu hình vào `index.html`:**
+   * Mở file `index.html` tìm biến cấu hình thứ 2:
+     ```javascript
+     const GOOGLE_SHEET_ID = "";
+     ```
+   * Dán ID bảng tính bạn vừa copy vào giữa hai dấu ngoặc kép:
+     ```javascript
+     const GOOGLE_SHEET_ID = "1A_B_C_D_XYZ";
+     ```
+4. Lưu file `index.html`. Lúc này trang web sẽ mở ra ngay lập tức dưới 0.3s nhờ gọi API đọc trực tiếp từ CDN của Google!
 
 ---
 

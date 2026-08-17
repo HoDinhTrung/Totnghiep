@@ -115,16 +115,6 @@
 </head>
 <body class="bg-navy-luxury text-slate-100 font-sans overflow-x-hidden antialiased">
 
-    <!-- Ambient Sound Toggle (Optional elegant background element) -->
-    <div class="fixed top-6 right-6 z-50">
-        <button id="musicToggle" class="bg-navy-luxury/80 border border-grayAccent/40 text-grayAccent hover:text-white hover:border-grayAccent p-3 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm group shadow-lg" aria-label="Âm nhạc">
-            <i class="fas fa-music text-sm group-hover:scale-110 transition-transform"></i>
-            <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 ease-in-out whitespace-nowrap text-xs tracking-wider">ÂM NHẠC</span>
-        </button>
-        <audio id="bgMusic" loop preload="auto">
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-        </audio>
-    </div>
 
     <!-- Floating Background Dust Container -->
     <div id="dustContainer" class="fixed inset-0 pointer-events-none z-10 overflow-hidden opacity-40"></div>
@@ -146,7 +136,7 @@
         <div class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center justify-center my-auto z-10">
             <!-- Left Text Content -->
             <div class="lg:col-span-5 text-center lg:text-left order-2 lg:order-1 flex flex-col justify-center">
-                <span class="font-serif italic text-2xl text-grayAccent mb-1 block">Trân trọng kính mời dự</span>
+              
                 <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold tracking-wide uppercase text-white mb-2 leading-tight">
                     Lễ Tốt Nghiệp
                 </h1>
@@ -250,7 +240,7 @@
                 <div class="text-center mb-10">
                     <p class="font-sans text-xs tracking-super text-grayAccent font-bold uppercase mb-2">LETTER OF INVITATION</p>
                     <h3 id="inviteGreeting" class="font-serif text-3xl md:text-5xl lg:text-6xl font-bold tracking-normal text-navy-dark my-4">
-                        Thân gửi Bạn Hiền
+                        Thân gửi Bro
                     </h3>
                     <div class="w-24 h-[1px] bg-grayAccent mx-auto my-6"></div>
                 </div>
@@ -286,9 +276,8 @@
         <div class="max-w-4xl mx-auto">
             <!-- Header -->
             <div id="coGuestsHeader" class="text-center mb-12">
-                <span class="font-sans text-xs tracking-super text-grayAccent font-bold uppercase block mb-3">NHỮNG NGƯỜI BẠN</span>
                 <h2 id="coGuestTitle" class="font-serif text-3xl md:text-5xl font-bold tracking-wide text-white leading-snug">
-                    Những người Bạn Hiền cũng có thể gặp tại buổi lễ
+                    Những người Bro cũng có thể gặp tại buổi lễ
                 </h2>
                 <div class="w-16 h-[1px] bg-grayAccent mx-auto my-5"></div>
             </div>
@@ -408,7 +397,7 @@
                         <!-- Embedded Styled Map preview -->
                         <div class="relative rounded-lg overflow-hidden border border-slate-200 shadow-lg group">
                             <!-- Background Image of Campus representing map -->
-                            <img src="./neu_campus.jpg" alt="NEU Century Building Location Map" class="w-full object-cover h-64 filter brightness-[0.85] group-hover:scale-105 transition-transform duration-700 select-none">
+                            <img src="./Cong_TDN.webp" alt="NEU Century Building Location Map" class="w-full object-cover h-64 filter brightness-[0.85] group-hover:scale-105 transition-transform duration-700 select-none">
                             <div class="absolute inset-0 bg-gradient-to-t from-navy-luxury/90 via-navy-luxury/40 to-transparent flex flex-col justify-end p-6">
                                 <h5 class="font-serif text-lg font-bold text-white mb-2">Bản đồ Đường Đi & Sơ đồ cổng trường</h5>
                                 <p class="font-sans text-xs text-slate-300 mb-4 leading-relaxed max-w-sm">
@@ -456,7 +445,7 @@
                 
                 <!-- Card 1 -->
                 <div class="relative rounded-lg overflow-hidden h-72 group shadow-xl border border-grayAccent/10 hover:border-grayAccent/50 transition-all duration-500">
-                    <div class="absolute inset-0 bg-cover bg-center filter brightness-[0.35] group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none" style="background-image: url('./neu_campus.jpg');"></div>
+                    <div class="absolute inset-0 bg-cover bg-center filter brightness-[0.35] group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none" style="background-image: url('./tro_chuyen.webp');"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-navy-luxury via-navy-luxury/40 to-transparent"></div>
                     <div class="absolute inset-0 p-6 flex flex-col justify-end">
                         <span class="text-grayAccent text-2xl mb-3 block"><i class="far fa-comments"></i></span>
@@ -469,7 +458,7 @@
 
                 <!-- Card 2 -->
                 <div class="relative rounded-lg overflow-hidden h-72 group shadow-xl border border-grayAccent/10 hover:border-grayAccent/50 transition-all duration-500">
-                    <div class="absolute inset-0 bg-cover bg-center filter brightness-[0.35] group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none" style="background-image: url('./neu_campus.jpg'); background-position: right top;"></div>
+                    <div class="absolute inset-0 bg-cover bg-center filter brightness-[0.35] group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none" style="background-image: url('./Toa_a2_2.webp'); background-position: right top;"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-navy-luxury via-navy-luxury/40 to-transparent"></div>
                     <div class="absolute inset-0 p-6 flex flex-col justify-end">
                         <span class="text-grayAccent text-2xl mb-3 block"><i class="fas fa-university"></i></span>
@@ -482,7 +471,7 @@
 
                 <!-- Card 3 -->
                 <div class="relative rounded-lg overflow-hidden h-72 group shadow-xl border border-grayAccent/10 hover:border-grayAccent/50 transition-all duration-500">
-                    <div class="absolute inset-0 bg-cover bg-center filter brightness-[0.35] group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none" style="background-image: url('./neu_campus.jpg'); background-position: left bottom;"></div>
+                    <div class="absolute inset-0 bg-cover bg-center filter brightness-[0.35] group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none" style="background-image: url('./ca_phe.jpg'); background-position: left bottom;"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-navy-luxury via-navy-luxury/40 to-transparent"></div>
                     <div class="absolute inset-0 p-6 flex flex-col justify-end">
                         <span class="text-grayAccent text-2xl mb-3 block"><i class="fas fa-mug-hot"></i></span>
@@ -519,7 +508,7 @@
             <div class="mb-12">
                 <span class="font-sans text-xs tracking-super text-grayAccent font-bold uppercase block mb-3">XÁC NHẬN THAM DỰ (RSVP)</span>
                 <h2 id="rsvpTitle" class="font-serif text-3xl md:text-5xl font-bold tracking-wide text-navy-dark leading-tight">
-                    Hẹn gặp Bạn Hiền tại lễ tốt nghiệp nhé!
+                    Hẹn gặp Bro tại lễ tốt nghiệp nhé!
                 </h2>
                 <div class="w-16 h-[2px] bg-navy mx-auto my-5"></div>
                 <p class="font-serif italic text-base md:text-xl text-slate-600 max-w-lg mx-auto">
@@ -624,7 +613,7 @@
 
         const DEFAULT_GUEST = {
             "id": "default",
-            "guestName": "Bạn Hiền",
+            "guestName": "Bro",
             "customMessage": "Sau một hành trình dài học tập và tích lũy tại giảng đường NEU, Trung cuối cùng cũng đã đi đến một cột mốc tốt nghiệp đặc biệt. Rất mong bạn có thể dành chút thời gian đến chung vui và ghi lại những kỷ niệm đẹp cùng Trung trong ngày nhận bằng!",
             "coGuests": ["Những người bạn thân thiết của Trung"],
             "rsvpStatus": "pending"
@@ -636,25 +625,6 @@
         let guestData = { ...DEFAULT_GUEST };
 
 
-        // ================= CUSTOM MUSIC HANDLER =================
-        const musicToggle = document.getElementById("musicToggle");
-        const bgMusic = document.getElementById("bgMusic");
-        let isMusicPlaying = false;
-
-        musicToggle.addEventListener("click", () => {
-            if (isMusicPlaying) {
-                bgMusic.pause();
-                musicToggle.querySelector("i").className = "fas fa-music text-sm";
-                musicToggle.classList.remove("border-grayAccent");
-                musicToggle.classList.add("border-grayAccent/40");
-            } else {
-                bgMusic.play().catch(e => console.log("Music play blocked by browser auto-play policy."));
-                musicToggle.querySelector("i").className = "fas fa-pause text-sm";
-                musicToggle.classList.remove("border-grayAccent/40");
-                musicToggle.classList.add("border-grayAccent");
-            }
-            isMusicPlaying = !isMusicPlaying;
-        });
 
 
         // ================= FLOATING DUST GENERATOR =================
@@ -934,95 +904,35 @@
 
         // ================= GSAP ANIMATIONS & EFFECTS =================
         function initGsapAnimations() {
-            gsap.registerPlugin(ScrollTrigger);
-
-            // Page Load Anims
+            // Page Load Anims (Hero section only - không dùng ScrollTrigger mờ đục cho nội dung bên dưới)
             gsap.from("#hero h1", {
-                duration: 1.5,
-                y: 50,
+                duration: 1.2,
+                y: 30,
                 opacity: 0,
-                ease: "power4.out"
+                ease: "power3.out"
             });
 
             gsap.from("#hero p", {
-                duration: 1.5,
-                y: 30,
-                opacity: 0,
-                delay: 0.3,
-                ease: "power4.out"
-            });
-
-            gsap.from("#hero img", {
-                duration: 1.8,
-                scale: 1.15,
+                duration: 1.2,
+                y: 20,
                 opacity: 0,
                 delay: 0.2,
                 ease: "power3.out"
             });
 
+            gsap.from("#hero img", {
+                duration: 1.5,
+                scale: 1.05,
+                opacity: 0,
+                delay: 0.1,
+                ease: "power3.out"
+            });
+
             gsap.from("#countdown", {
-                duration: 1.2,
-                y: 20,
-                opacity: 0,
-                delay: 0.5,
-                ease: "power3.out"
-            });
-
-            // Scroll trigger reveals
-            gsap.from("#inviteCard", {
-                scrollTrigger: {
-                    trigger: "#invitation",
-                    start: "top 80%",
-                },
-                duration: 1.2,
-                y: 60,
-                opacity: 0,
-                ease: "power3.out"
-            });
-
-            gsap.from("#coGuestsHeader", {
-                scrollTrigger: {
-                    trigger: "#coGuestsSection",
-                    start: "top 80%",
-                },
                 duration: 1,
-                y: 30,
+                y: 15,
                 opacity: 0,
-                ease: "power2.out"
-            });
-
-            gsap.from("#details .timeline-item", {
-                scrollTrigger: {
-                    trigger: "#details",
-                    start: "top 75%",
-                },
-                duration: 1,
-                x: -30,
-                opacity: 0,
-                stagger: 0.2,
-                ease: "power2.out"
-            });
-
-            gsap.from("#activities .grid > div", {
-                scrollTrigger: {
-                    trigger: "#activities",
-                    start: "top 75%",
-                },
-                duration: 1,
-                y: 40,
-                opacity: 0,
-                stagger: 0.15,
-                ease: "power3.out"
-            });
-
-            gsap.from("#rsvpContainer", {
-                scrollTrigger: {
-                    trigger: "#rsvp",
-                    start: "top 80%",
-                },
-                duration: 1.2,
-                scale: 0.95,
-                opacity: 0,
+                delay: 0.3,
                 ease: "power3.out"
             });
         }
