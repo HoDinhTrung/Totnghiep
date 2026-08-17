@@ -231,38 +231,38 @@
                 <div class="absolute bottom-3 right-3 w-8 h-8 border-b border-r border-grayAccent/60"></div>
 
                 <!-- Loading Spinner for API Fetching -->
-                <div id="inviteCardLoader" class="absolute inset-0 bg-white/95 rounded-lg flex flex-col justify-center items-center z-30 transition-opacity duration-500">
+                <div id="inviteCardLoader" class="absolute inset-0 bg-white rounded-lg flex flex-col justify-center items-center z-30 transition-opacity duration-500">
                     <div class="w-12 h-12 border-4 border-navy border-t-grayAccent rounded-full animate-spin mb-4"></div>
                     <span class="font-serif italic text-lg text-navy-dark tracking-wide">Đang chuẩn bị thư mời...</span>
                 </div>
 
-                <!-- Card Header -->
-                <div class="text-center mb-10">
-                    <p class="font-sans text-xs tracking-super text-grayAccent font-bold uppercase mb-2">LETTER OF INVITATION</p>
-                    <h3 id="inviteGreeting" class="font-serif text-3xl md:text-5xl lg:text-6xl font-bold tracking-normal text-navy-dark my-4">
-                        Thân gửi Bro
-                    </h3>
-                    <div class="w-24 h-[1px] bg-grayAccent mx-auto my-6"></div>
-                </div>
-
-                <!-- Card Body -->
-                <div class="text-center max-w-2xl mx-auto space-y-6 md:space-y-8">
-                    <!-- Typing / Reveal message container -->
-                    <p id="inviteMessage" class="font-sans text-base md:text-lg leading-relaxed text-slate-700 text-justify md:text-center">
-                        Sau một hành trình dài học tập và rèn luyện, Trung cuối cùng cũng đã đi đến một cột mốc rất đặc biệt. Rất mong bạn có thể dành chút thời gian đến chung vui cùng Trung tại ngày Lễ Tốt nghiệp!
-                    </p>
-
-                    <!-- Quote Block -->
-                    <div class="py-6 border-y border-grayAccent/20 my-8">
-                        <p class="font-serif italic text-lg md:text-2xl text-navy font-light leading-relaxed">
-                            "Một cột mốc sẽ ý nghĩa hơn khi có những người mình quý cùng chứng kiến."
-                        </p>
+                <div id="inviteCardContent" class="invisible">
+                    <!-- Card Header -->
+                    <div class="text-center mb-10">
+                        <p class="font-sans text-xs tracking-super text-grayAccent font-bold uppercase mb-2">LETTER OF INVITATION</p>
+                        <h3 id="inviteGreeting" class="font-serif text-3xl md:text-5xl lg:text-6xl font-bold tracking-normal text-navy-dark my-4">
+                            Thân gửi
+                        </h3>
+                        <div class="w-24 h-[1px] bg-grayAccent mx-auto my-6"></div>
                     </div>
 
-                    <!-- Inner Sign-off -->
-                    <div class="flex flex-col items-center justify-center mt-8 space-y-1">
-                        <span class="font-sans text-xs tracking-widest text-slate-500 uppercase">Trân trọng,</span>
-                        <span class="font-serif text-2xl md:text-3xl text-navy-dark font-semibold tracking-widest uppercase mt-2">HỒ ĐÌNH TRUNG</span>
+                    <!-- Card Body -->
+                    <div class="text-center max-w-2xl mx-auto space-y-6 md:space-y-8">
+                        <!-- Typing / Reveal message container -->
+                        <p id="inviteMessage" class="font-sans text-base md:text-lg leading-relaxed text-slate-700 text-justify md:text-center"></p>
+
+                        <!-- Quote Block -->
+                        <div class="py-6 border-y border-grayAccent/20 my-8">
+                            <p class="font-serif italic text-lg md:text-2xl text-navy font-light leading-relaxed">
+                                "Một cột mốc sẽ ý nghĩa hơn khi có những người mình quý cùng chứng kiến."
+                            </p>
+                        </div>
+
+                        <!-- Inner Sign-off -->
+                        <div class="flex flex-col items-center justify-center mt-8 space-y-1">
+                            <span class="font-sans text-xs tracking-widest text-slate-500 uppercase">Trân trọng,</span>
+                            <span class="font-serif text-2xl md:text-3xl text-navy-dark font-semibold tracking-widest uppercase mt-2">HỒ ĐÌNH TRUNG</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -403,6 +403,24 @@
                             <div class="flex flex-col gap-2 font-sans text-xs text-slate-500">
                                 <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-grayAccent w-4"></i> Cổng Giải Phóng: Số 207 đường Giải Phóng, Hai Bà Trưng, Hà Nội</span>
                                 <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-grayAccent w-4"></i> Cổng Trần Đại Nghĩa: 213 - 215 Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội</span>
+                            </div>
+                        </div>
+
+                        <!-- Campus Map Card -->
+                        <div class="bg-slate-50 border border-slate-200/60 rounded-lg p-6 shadow-sm">
+                            <h4 class="font-serif text-xl font-bold text-navy-dark mb-2 flex items-center gap-2">
+                                <i class="fas fa-map text-grayAccent text-base"></i>
+                                Sơ đồ di chuyển nội bộ NEU
+                            </h4>
+                            <p class="font-sans text-sm text-slate-600 leading-relaxed mb-4">
+                                Bản đồ chi tiết hướng dẫn các toà nhà, khu vực sự kiện tốt nghiệp và bãi gửi xe bên trong trường Đại học Kinh tế Quốc dân. Nhấp vào bản đồ để phóng to xem chi tiết.
+                            </p>
+                            <!-- Clickable Image Thumbnail -->
+                            <div class="relative rounded-lg overflow-hidden border border-slate-200 cursor-pointer shadow-md group" onclick="openMapModal()">
+                                <img src="./ban_do.jpg" alt="Sơ đồ di chuyển nội bộ NEU" class="w-full object-cover h-48 group-hover:scale-105 transition-transform duration-500 select-none">
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 text-white font-sans text-xs font-semibold gap-2">
+                                    <i class="fas fa-search-plus"></i> Xem sơ đồ chi tiết
+                                </div>
                             </div>
                         </div>
 
@@ -752,6 +770,10 @@
             // Show RSVP section
             if (rsvpSec) rsvpSec.classList.remove("hidden");
 
+            // Show Card Content
+            const cardContent = document.getElementById("inviteCardContent");
+            if (cardContent) cardContent.classList.remove("invisible");
+
             // Remove Loader
             const loader = document.getElementById("inviteCardLoader");
             if (loader) {
@@ -952,6 +974,31 @@
         }
 
 
+        // ================= MAP MODAL LIGHTBOX =================
+        function openMapModal() {
+            const modal = document.getElementById("mapModal");
+            if (modal) {
+                modal.classList.remove("hidden");
+                // Trigger smooth fade in
+                setTimeout(() => {
+                    modal.classList.add("opacity-100");
+                }, 10);
+            }
+        }
+
+        // Close Modal
+        function closeMapModal() {
+            const modal = document.getElementById("mapModal");
+            if (modal) {
+                modal.classList.remove("opacity-100");
+                // Wait for fade anim before hiding
+                setTimeout(() => {
+                    modal.classList.add("hidden");
+                }, 300);
+            }
+        }
+
+
         // ================= PAGE INITIALIZATION =================
         window.addEventListener("DOMContentLoaded", () => {
             createDustParticles();
@@ -959,5 +1006,17 @@
             loadGuestData();
         });
     </script>
+
+    <!-- Map Image Lightbox Modal -->
+    <div id="mapModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300 opacity-0" onclick="closeMapModal()">
+        <!-- Close Button -->
+        <button class="absolute top-6 right-6 text-white/80 hover:text-white text-4xl font-light focus:outline-none transition-colors" onclick="closeMapModal()">
+            &times;
+        </button>
+        <!-- Modal Image -->
+        <div class="relative max-w-4xl max-h-[85vh] overflow-hidden rounded shadow-2xl" onclick="event.stopPropagation()">
+            <img src="./ban_do.jpg" alt="Bản đồ NEU phóng to" class="w-full h-auto max-h-[85vh] object-contain select-none">
+        </div>
+    </div>
 </body>
 </html>
