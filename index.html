@@ -738,7 +738,7 @@
 
             try {
                 // Đọc dữ liệu bảo mật qua cổng Google Apps Script Web App API
-                const response = await fetch(`${GAS_API_URL}?id=${slug}`);
+                const response = await fetch(`${GAS_API_URL}?id=${encodeURIComponent(slug)}`);
                 if (!response.ok) throw new Error("Không thể kết nối với máy chủ API.");
                 const data = await response.json();
                 
@@ -854,7 +854,7 @@
             if (GAS_API_URL && GAS_API_URL.trim() !== "") {
                 try {
                     // Send dynamic request as POST or GET query parameter
-                    const rsvpEndpoint = `${GAS_API_URL}?id=${currentGuestId}&action=rsvp&status=${statusText}`;
+                    const rsvpEndpoint = `${GAS_API_URL}?id=${encodeURIComponent(currentGuestId)}&action=rsvp&status=${encodeURIComponent(statusText)}`;
                     await fetch(rsvpEndpoint, { method: 'GET', mode: 'no-cors' });
                 } catch (error) {
                     console.error("Failed to post RSVP to Apps Script:", error);
@@ -1007,6 +1007,43 @@
             loadGuestData();
         });
     </script>
+
+    <!-- ================= FLOATING CONTACT WIDGET ================= -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3.5 select-none">
+        
+        <!-- Zalo Button -->
+        <a href="https://zalo.me/0333019288" target="_blank" rel="noopener noreferrer" class="group relative flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0068FF] text-white shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-white/90" title="Chat Zalo">
+            <!-- Ripple Effect -->
+            <span class="absolute inset-0 rounded-full bg-[#0068FF] animate-ping opacity-25 pointer-events-none"></span>
+            
+            <!-- Zalo Logo SVG -->
+            <svg class="w-6 h-6 md:w-7 md:h-7 fill-current relative z-10" viewBox="0 0 32 32">
+                <path d="M16 2C8.268 2 2 7.766 2 14.88c0 3.96 1.95 7.498 5.006 9.876L5.5 29.5l5.882-2.316C13.064 27.65 14.5 27.76 16 27.76c7.732 0 14-5.766 14-12.88S23.732 2 16 2zm-8.2 16.5v-1.8l3.9-5.2H7.9V9.8h6.2v1.7l-3.9 5.2h4v1.8H7.8zm8.6-8.7h2.2v7.2h5.1v1.8h-7.3V9.8zm11 7.2c-1.8 0-3.2-1.5-3.2-3.6s1.4-3.6 3.2-3.6 3.2 1.5 3.2 3.6-1.4 3.6-3.2 3.6zm0-1.8c.7 0 1.2-.8 1.2-1.8s-.5-1.8-1.2-1.8-1.2.8-1.2 1.8.5 1.8 1.2 1.8z"/>
+            </svg>
+
+            <!-- Tooltip -->
+            <span class="absolute right-full mr-3 px-3 py-1.5 bg-navy-luxury/95 backdrop-blur-md text-white text-xs font-semibold rounded-lg shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-200 pointer-events-none border border-white/10 hidden sm:flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Zalo: 0333 019 288
+            </span>
+        </a>
+
+        <!-- Messenger Button -->
+        <a href="https://www.facebook.com/trung20012003" target="_blank" rel="noopener noreferrer" class="group relative flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-tr from-[#00C6FF] via-[#0078FF] to-[#A824FB] text-white shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-white/90" title="Nhắn Messenger">
+            <!-- Ripple Effect -->
+            <span class="absolute inset-0 rounded-full bg-[#0078FF] animate-ping opacity-25 pointer-events-none"></span>
+
+            <!-- Messenger FontAwesome Icon -->
+            <i class="fab fa-facebook-messenger text-2xl md:text-3xl relative z-10 text-white"></i>
+
+            <!-- Tooltip -->
+            <span class="absolute right-full mr-3 px-3 py-1.5 bg-navy-luxury/95 backdrop-blur-md text-white text-xs font-semibold rounded-lg shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-200 pointer-events-none border border-white/10 hidden sm:flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Messenger: Hồ Đình Trung
+            </span>
+        </a>
+
+    </div>
 
     <!-- Map Image Lightbox Modal -->
     <div id="mapModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300 opacity-0" onclick="closeMapModal()">
